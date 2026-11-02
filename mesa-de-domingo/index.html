@@ -7,402 +7,513 @@
 <meta name="description" content="19 receitas de vó sem glúten, testadas na cozinha de casa por uma celíaca. Ebook em PDF, com foto de cada receita.">
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Montserrat:wght@400;500;600;700&display=swap">
 <style>
-/* Marca Sem trigo, sem culpa: Verde Essencial #2E3A1F, Laranja Afeto #E76F2E, Amarelo Vitalidade #F4B942, Off White Natural #F8F6EF. Playfair Display nos títulos, Montserrat nos textos. */
+/* Sem trigo, sem culpa · Mesa de Domingo
+   A página é um domingo inteiro: da véspera (o Mix) até a sobremesa.
+   Formas tiradas do logo: o círculo da fruta, o arco laranja, a fatia e as ondas verdes. */
 :root{
-  color-scheme: light;
-  --escuro:#2E3A1F;      /* Verde Essencial */
-  --escuro2:#3a4828;
-  --verde:#3f4f2a;
-  --creme:#F8F6EF;       /* Off White Natural */
-  --creme2:#F1EBDD;
-  --tomate:#E76F2E;
-  --laranja:#E76F2E;      /* Laranja Afeto */
-  --laranja-texto:#B8521A; /* laranja para texto pequeno sobre o off white */
+  --verde:#2E3A1F;        /* Verde Essencial */
+  --verde2:#3b4a29;
+  --laranja:#E76F2E;      /* Laranja Afeto: formas e títulos grandes */
+  --laranja-txt:#B4501A;  /* laranja para texto pequeno sobre o off white */
   --amarelo:#F4B942;      /* Amarelo Vitalidade */
-  --ouro-claro:#F8CC6A;
-  --linha:#E76F2E;
+  --off:#F8F6EF;          /* Off White Natural */
+  --bege:#F1EADB;
   --texto:#2E3A1F;
-  --texto2:#545a45;
+  --texto2:#55593f;
+  --linha:#dcd3bf;
   --serif:'Playfair Display', Georgia, 'Times New Roman', serif;
   --sans:'Montserrat', 'Helvetica Neue', Arial, sans-serif;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--creme);color:var(--texto);font-family:var(--sans);font-size:17px;line-height:1.7;-webkit-font-smoothing:antialiased;padding-bottom:110px}
+body{margin:0;background:var(--off);color:var(--texto);font-family:var(--sans);font-size:16.5px;line-height:1.7;-webkit-font-smoothing:antialiased;padding-bottom:96px;overflow-x:hidden}
 img{max-width:100%;display:block}
 a{color:inherit}
-h1,h2,h3{font-family:var(--serif);font-weight:500;text-wrap:balance;margin:0;letter-spacing:-.01em}
-h1 em,h2 em,h3 em{font-style:italic;color:var(--amarelo)}
-.claro h2 em,.claro h3 em,.claro2 h2 em,.paginas h2 em{color:var(--laranja)}
 p{margin:0}
-.wrap{max-width:720px;margin:0 auto;padding-left:max(24px, env(safe-area-inset-left, 0px));padding-right:max(24px, env(safe-area-inset-right, 0px))}
-.wide{max-width:1040px}
-.sec{padding-block:88px}
-.escuro{background:var(--escuro);color:var(--creme)}
-.claro{background:var(--creme)}
-.claro2{background:var(--creme2)}
-.olho{font-family:var(--sans);font-size:13px;font-weight:600;letter-spacing:.32em;text-transform:uppercase}
-.centro{text-align:center}
-.pilula{display:inline-flex;align-items:center;justify-content:center;min-height:56px;padding:16px 36px;border-radius:999px;background:linear-gradient(180deg,var(--ouro-claro),var(--amarelo));color:var(--escuro);font-family:var(--sans);font-weight:600;font-size:14px;letter-spacing:.24em;text-transform:uppercase;text-decoration:none;text-align:center;box-shadow:0 10px 24px rgba(46,58,31,.22);transition:transform .2s ease, box-shadow .2s ease}
-.pilula:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(46,58,31,.28)}
-.pilula:focus-visible,summary:focus-visible{outline:3px solid var(--tomate);outline-offset:3px}
-.traco{width:72px;height:1.5px;background:var(--laranja);margin:28px auto;border:0}
+h1,h2,h3{font-family:var(--serif);font-weight:500;margin:0;text-wrap:balance;letter-spacing:-.01em}
+h1 em,h2 em,h3 em{font-style:italic;color:var(--laranja)}
+.wrap{max-width:1080px;margin:0 auto;padding-left:max(20px, env(safe-area-inset-left, 0px));padding-right:max(20px, env(safe-area-inset-right, 0px))}
+.estreito{max-width:700px}
+.etiqueta{font-size:12px;font-weight:600;letter-spacing:.32em;text-transform:uppercase;color:var(--laranja-txt)}
+.botao{display:inline-flex;align-items:center;gap:12px;min-height:56px;padding:14px 30px 14px 16px;border-radius:999px;background:var(--verde);color:var(--off);text-decoration:none;font-weight:600;font-size:15px;letter-spacing:.04em;transition:transform .2s ease, background .2s ease}
+.botao:hover{transform:translateY(-2px);background:#24301a}
+.botao:focus-visible,summary:focus-visible,.folhas:focus-visible{outline:3px solid var(--laranja);outline-offset:3px}
+.botao .fatia{width:28px;height:28px;flex:none}
+.botao.claro{background:var(--amarelo);color:var(--verde)}
+.botao.claro:hover{background:#f7c75f}
+
+/* divisor da marca: linha, folha, linha */
+.divisor{display:flex;align-items:center;gap:12px;color:var(--verde);margin-top:22px;max-width:360px}
+.divisor::before,.divisor::after{content:"";flex:1;height:1.5px;background:currentColor;opacity:.75}
+.divisor svg{width:18px;height:18px;flex:none}
+.divisor.centro{margin-inline:auto}
+.divisor.claro{color:var(--amarelo)}
+.manifesto{padding-block:20px 90px;text-align:center}
+.manifesto p{font-family:var(--serif);font-size:clamp(26px,4vw,40px);line-height:1.3}
+.manifesto p em{color:var(--laranja)}
+.manifesto .selo-marca{width:120px;margin:0 auto 26px}
 
 /* topo */
-.topo{background:var(--creme);border-bottom:1px solid #e6dfcd;padding-block:16px}
-.topo .wrap{display:flex;align-items:center;gap:14px}
-.topo img{width:46px;height:48px}
-.marca{font-family:var(--serif);font-size:22px;line-height:1.05;color:var(--escuro);font-weight:600}
-.marca small{display:block;font-family:var(--sans);font-weight:500;font-size:9.5px;letter-spacing:.3em;text-transform:uppercase;margin-top:6px;color:var(--texto2)}
-.marca em{font-style:italic}
-.topo .vol{margin-left:auto;font-size:11px;letter-spacing:.3em;font-weight:600;color:var(--escuro);text-transform:uppercase;text-align:right;color:var(--texto2)}
+.topo{padding-block:18px}
+.topo .wrap{display:flex;align-items:center;gap:12px}
+.topo img{width:44px;height:46px}
+.logo{font-family:var(--serif);font-weight:600;font-size:21px;line-height:1.05}
+.logo em{font-style:italic;font-weight:500}
+.logo small{display:block;font-family:var(--sans);font-weight:500;font-size:9.5px;letter-spacing:.32em;text-transform:uppercase;color:var(--texto2);margin-top:6px}
+.topo a.ir{margin-left:auto;font-size:13px;font-weight:600;text-decoration:none;border-bottom:1.5px solid var(--laranja);padding-bottom:2px}
 
-/* herói */
-.heroi{padding-block:72px 0;text-align:center;overflow:hidden}
-.heroi .olho{color:var(--amarelo)}
-.heroi h1{font-size:clamp(40px,9vw,72px);line-height:1.04;margin-top:22px}
-.heroi .lead{font-family:var(--serif);font-size:clamp(19px,4.4vw,23px);line-height:1.5;margin:26px auto 0;max-width:34ch;color:#ece5d2}
-.specs{margin-top:30px;font-size:12px;letter-spacing:.26em;font-weight:500;text-transform:uppercase;color:#cfc8b2;line-height:2}
-.heroi .pilula{margin-top:34px;width:100%;max-width:520px}
-.heroi .assina{font-family:var(--serif);font-style:italic;font-size:22px;color:var(--amarelo);margin-top:26px}
-.palco{position:relative;margin-top:56px;padding-block:56px 72px;background:radial-gradient(ellipse at 50% 40%,#4a5c33 0%,#3a4828 45%,var(--escuro) 75%)}
-.palco .capa{width:min(340px,72%);margin:0 auto;border-radius:6px;box-shadow:0 30px 60px rgba(0,0,0,.45),0 0 0 1px rgba(255,255,255,.06);transform:rotate(-4deg)}
-.palco .foto-mini{position:absolute;width:min(170px,34%);border-radius:10px;box-shadow:0 18px 36px rgba(0,0,0,.4);border:6px solid var(--creme2)}
-.palco .m1{left:max(4%, calc(50% - 330px));bottom:40px;transform:rotate(-8deg)}
-.palco .m2{right:max(4%, calc(50% - 330px));top:40px;transform:rotate(7deg)}
+/* abertura */
+.abertura{position:relative;padding-block:28px 96px;overflow:hidden}
+.abertura .onda-fundo{position:absolute;right:-120px;top:-40px;width:min(640px,80vw);height:auto;z-index:0}
+.abertura .wrap{position:relative;z-index:1;display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+.abertura h1{font-size:clamp(42px,6.2vw,74px);line-height:1.02;margin-top:18px}
+.abertura .lead{font-size:18px;margin-top:24px;max-width:36ch;color:var(--texto2)}
+.acao{margin-top:34px;display:flex;flex-wrap:wrap;align-items:center;gap:18px 26px}
+.acao .valor{font-family:var(--serif);font-size:34px;line-height:1}
+.acao .valor small{display:block;font-family:var(--sans);font-size:12px;letter-spacing:.06em;color:var(--texto2);margin-top:6px}
+.miudo{margin-top:26px;display:flex;flex-wrap:wrap;gap:8px 22px;font-size:13px;color:var(--texto2)}
+.miudo span{display:inline-flex;align-items:center;gap:8px}
+.miudo span::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--amarelo)}
 
-/* faixa de promessas */
-.faixa{background:var(--verde);color:var(--creme);padding-block:44px;text-align:center}
-.faixa ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;align-items:center;gap:0}
-.faixa li{font-size:13px;letter-spacing:.3em;font-weight:600;text-transform:uppercase}
-.faixa li+li::before{content:"";display:block;width:56px;height:1px;background:var(--laranja);margin:20px auto}
+/* o círculo do logo, com o arco */
+.prato{position:relative;width:min(470px,100%);aspect-ratio:1;margin-left:auto}
+.prato .arco{position:absolute;inset:-4%;width:108%;height:108%}
+.prato .foto{position:absolute;inset:6%;border-radius:50%;overflow:hidden;box-shadow:0 30px 60px rgba(46,58,31,.25)}
+.prato .foto img{width:100%;height:100%;object-fit:cover}
+.prato .livro{position:absolute;left:-12%;bottom:-6%;width:40%;border-radius:4px;box-shadow:0 22px 40px rgba(46,58,31,.35);transform:rotate(-7deg)}
+.prato .bolinha{position:absolute;border-radius:50%}
+.prato .b1{width:9%;aspect-ratio:1;background:var(--amarelo);right:4%;top:4%}
+.prato .b2{width:6%;aspect-ratio:1;background:var(--verde);right:-2%;bottom:24%}
+.prato .selo{position:absolute;right:-4%;bottom:-2%;width:31%}
 
 /* história */
-.historia h2{font-size:clamp(34px,7vw,52px);line-height:1.1;text-align:center}
-.historia .texto{margin-top:34px;display:flex;flex-direction:column;gap:22px;font-size:18px;text-align:center;color:var(--texto2)}
-.autora{margin:46px auto 0;display:flex;flex-direction:column;align-items:center;gap:14px}
-.autora img{width:150px;height:150px;border-radius:50%;object-fit:cover;object-position:center 18%;border:4px solid var(--laranja)}
-.autora .nome{font-family:var(--serif);font-size:20px}
-.autora .papel{font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:var(--laranja-texto);font-weight:600}
+.historia{background:var(--verde);color:var(--off);position:relative;padding-block:40px 110px}
+.onda{display:block;width:100%;height:70px}
+.historia .wrap{display:grid;grid-template-columns:260px 1fr;gap:56px;align-items:center}
+.historia h2{font-size:clamp(34px,5vw,54px);line-height:1.08}
+.historia h2 em{color:var(--amarelo)}
+.historia .texto{margin-top:26px;display:flex;flex-direction:column;gap:18px;font-size:17.5px;color:#e6e4d8;max-width:58ch}
+.retrato{position:relative;width:260px;aspect-ratio:1}
+.retrato img{position:absolute;inset:12px;width:calc(100% - 24px);height:calc(100% - 24px);border-radius:50%;object-fit:cover;object-position:center 18%}
+.retrato svg{position:absolute;inset:0}
+.historia .assina{margin-top:26px;font-family:var(--serif);font-style:italic;font-size:21px;color:var(--amarelo)}
+.historia .assina small{display:block;font-family:var(--sans);font-style:normal;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:#c9c8b6;margin-top:4px}
 
-/* pilares */
-.pilares h2{font-size:clamp(32px,6.6vw,50px);line-height:1.12;text-align:center}
-.pilares .sub{text-align:center;margin:22px auto 0;max-width:40ch;color:var(--texto2)}
-.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;margin-top:52px}
-.pilar{background:var(--creme);border:1.5px dashed #e3a77f;outline:1.5px dashed #e3a77f;outline-offset:-10px;padding:44px 30px 40px;text-align:center;box-shadow:0 14px 30px rgba(46,58,31,.07)}
-.oval{width:120px;height:150px;margin:0 auto;border:1.5px solid var(--laranja);border-radius:50%;display:flex;align-items:center;justify-content:center;position:relative}
-.oval::after{content:"";position:absolute;inset:7px;border:1px solid #f3c7a8;border-radius:50%}
-.oval svg{width:54px;height:54px;stroke:var(--escuro);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
-.pilar h3{font-size:26px;letter-spacing:.06em;margin-top:26px;color:var(--escuro);text-transform:uppercase}
-.pilar p{margin-top:14px;color:var(--texto2);font-size:16px}
-.cta-centro{text-align:center;margin-top:52px}
+/* o domingo */
+.domingo{padding-block:96px 40px}
+.domingo .cabeca{max-width:640px}
+.domingo h2{font-size:clamp(36px,5.4vw,60px);line-height:1.05;margin-top:14px}
+.domingo .cabeca p{margin-top:18px;color:var(--texto2);font-size:17px}
+.legenda{margin-top:20px;display:flex;gap:22px;font-size:13px;color:var(--texto2);flex-wrap:wrap}
+.legenda span{display:inline-flex;align-items:center;gap:8px}
+.horas{margin-top:56px;position:relative}
+.horas::before{content:"";position:absolute;left:94px;top:10px;bottom:10px;width:1.5px;background:repeating-linear-gradient(var(--laranja) 0 6px,transparent 6px 12px)}
+.hora{display:grid;grid-template-columns:94px 1fr 300px;gap:0 40px;padding-block:34px;position:relative}
+.hora::before{content:"";position:absolute;left:87px;top:46px;width:16px;height:16px;border-radius:50%;background:var(--off);border:3px solid var(--laranja)}
+.hora .quando{font-family:var(--serif);font-style:italic;font-size:30px;line-height:1;color:var(--laranja);padding-top:6px;padding-right:22px;text-align:right}
+.hora .conteudo{padding-left:24px}
+.hora h3{font-size:30px;line-height:1.15}
+.hora .por{margin-top:6px;font-size:15px;color:var(--texto2)}
+.cardapio{list-style:none;margin:18px 0 0;padding:0}
+.cardapio li{display:flex;align-items:baseline;gap:10px;padding:7px 0;font-size:16px;line-height:1.35}
+.cardapio li .nome{flex:0 1 auto}
+.cardapio li .pontos{flex:1 1 20px;border-bottom:1.5px dotted #c9bfa6;transform:translateY(-4px);min-width:20px}
+.nivel{flex:none;display:inline-flex;gap:3px}
+.nivel i{width:11px;height:11px;border-radius:50%;background:var(--laranja)}
+.nivel i.v{background:transparent;border:1.5px solid #d8b49c}
+.hora figure{margin:0;border-radius:50%;overflow:hidden;aspect-ratio:1;width:100%;align-self:center;box-shadow:0 18px 40px rgba(46,58,31,.18)}
+.hora figure img{width:100%;height:100%;object-fit:cover}
+.hora:nth-child(even) figure{border-radius:46% 54% 50% 50% / 52% 48% 52% 48%}
 
-/* dentro */
-.dentro h2{font-size:clamp(32px,6.6vw,50px);line-height:1.12;text-align:center}
-.mosaico{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:46px}
-.mosaico figure{margin:0;position:relative;overflow:hidden;border-radius:14px;aspect-ratio:4/5}
-.mosaico img{width:100%;height:100%;object-fit:cover}
-.mosaico figcaption{position:absolute;left:0;right:0;bottom:0;padding:28px 12px 10px;background:linear-gradient(transparent,rgba(46,58,31,.75));color:#fff;font-family:var(--serif);font-size:15px;line-height:1.2}
-.nota-foto{text-align:center;font-size:13px;color:var(--texto2);margin-top:14px}
-.lista{margin-top:56px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:34px 40px}
-.grupo h3{font-size:22px;color:var(--escuro);display:flex;align-items:baseline;gap:10px}
-.grupo h3 span{font-family:var(--sans);font-size:12px;letter-spacing:.2em;color:var(--laranja-texto);font-weight:600}
-.grupo ul{list-style:none;margin:12px 0 0;padding:0;border-top:1px solid #d9cfb6}
-.grupo li{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid #d9cfb6;font-size:15.5px;line-height:1.4}
-.nivel{flex:none;font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;padding:3px 10px;border-radius:999px;align-self:center}
-.n-f{background:#e3e7d3;color:#3b4625}.n-m{background:#f6dfc0;color:#7a4413}.n-d{background:#f5cfc6;color:#8a2a1a}
+/* promessas */
+.promessas{background:var(--bege);padding-block:90px;position:relative;overflow:hidden}
+.promessas h2{font-size:clamp(32px,4.8vw,50px);line-height:1.1;max-width:20ch}
+.quatro{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:36px;margin-top:52px}
+.quatro article{border-top:2px solid var(--verde);padding-top:22px}
+.quatro svg{width:44px;height:44px;stroke:var(--verde);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.quatro h3{font-size:24px;margin-top:16px}
+.quatro p{margin-top:10px;font-size:15.5px;color:var(--texto2)}
 
-/* páginas */
-.paginas{background:var(--creme2)}
-.paginas h2{font-size:clamp(32px,6.6vw,50px);line-height:1.12;text-align:center}
-.leque{display:flex;justify-content:center;align-items:flex-end;margin-top:54px;padding-bottom:10px}
-.leque img{width:min(250px,34%);border-radius:4px;box-shadow:0 18px 40px rgba(46,58,31,.22);background:#fff}
-.leque .p1{transform:rotate(-7deg) translateX(22px)}
-.leque .p2{transform:translateY(-18px);z-index:2;position:relative}
-.leque .p3{transform:rotate(7deg) translateX(-22px)}
-.rotulos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:34px}
-.rotulos div{background:#efe8d8;padding:14px 10px;text-align:center;font-size:12px;letter-spacing:.24em;text-transform:uppercase;font-weight:600;color:var(--texto2);line-height:1.6}
-.frase{font-family:var(--serif);font-style:italic;font-size:clamp(26px,5.6vw,36px);line-height:1.3;text-align:center;margin-top:56px}
+/* folhear */
+.folhear{padding-block:40px 80px}
+.folhear .topo-sec{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap}
+.folhear h2{font-size:clamp(32px,4.8vw,50px);line-height:1.1;max-width:18ch}
+.folhear .topo-sec p{max-width:34ch;color:var(--texto2);font-size:15.5px}
+.folhas{margin-top:44px;display:flex;gap:22px;overflow-x:auto;scroll-snap-type:x mandatory;padding:10px 4px 26px}
+.folhas figure{margin:0;flex:0 0 min(300px,74vw);scroll-snap-align:start}
+.folhas img{width:100%;border-radius:6px;background:#fff;box-shadow:0 14px 34px rgba(46,58,31,.16)}
+.folhas figcaption{margin-top:14px;font-family:var(--serif);font-size:18px}
+.folhas figcaption span{display:block;font-family:var(--sans);font-size:13px;color:var(--texto2);margin-top:2px}
 
-/* notas */
-.notas h2{font-size:clamp(32px,6.6vw,48px);text-align:center;line-height:1.12}
-.envelope{margin:46px auto 0;width:min(360px,100%);position:relative;padding-top:60px}
-.envelope .aba{position:absolute;top:0;left:50%;transform:translateX(-50%);width:0;height:0;border-left:120px solid transparent;border-right:120px solid transparent;border-bottom:90px solid #d8c79a}
-.envelope .cartao{position:relative;background:#fffdf6;margin:0 30px;padding:22px 18px 70px;text-align:center;font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--texto2);box-shadow:0 6px 16px rgba(0,0,0,.08)}
-.envelope .corpo{position:relative;margin-top:-56px;background:#e6d9b3;padding:26px 24px 30px;box-shadow:0 20px 40px rgba(46,58,31,.18)}
-.envelope .selo{background:var(--escuro);color:var(--creme);padding:22px 16px;text-align:center}
-.envelope .selo b{display:block;font-family:var(--serif);font-weight:500;font-size:30px;letter-spacing:.12em;color:var(--amarelo)}
-.envelope .selo small{display:block;font-size:10px;letter-spacing:.26em;margin-top:6px}
-.notas .texto{text-align:center;margin:36px auto 0;max-width:38ch;font-family:var(--serif);font-style:italic;font-size:21px;line-height:1.5}
+/* convite */
+.convite{padding-block:0 96px}
+.convite .caixa{border:1.5px solid var(--verde);border-radius:200px;padding:40px 56px;display:flex;align-items:center;gap:30px}
+.convite .caixa img{width:62px;height:64px;flex:none}
+.convite p{font-family:var(--serif);font-size:21px;line-height:1.45}
+.convite p a{color:var(--laranja-txt);text-decoration-thickness:1.5px;text-underline-offset:3px}
 
-/* oferta */
-.oferta{background:var(--escuro);background-image:repeating-linear-gradient(135deg,rgba(255,255,255,.025) 0 2px,transparent 2px 9px)}
-.oferta h2{font-size:clamp(36px,7.4vw,56px);line-height:1.08;text-align:center}
-.oferta .sub{text-align:center;font-family:var(--serif);font-size:20px;line-height:1.55;margin:24px auto 0;max-width:34ch;color:#ece5d2}
-.caixa{background:var(--creme2);color:var(--texto);border-radius:28px;margin-top:44px;padding:16px 16px 34px;text-align:center}
-.caixa .tarja{background:var(--escuro);color:var(--creme);border-radius:16px;padding:16px;font-size:12px;letter-spacing:.3em;text-transform:uppercase;font-weight:600}
-.caixa .tarja::before,.caixa .tarja::after{content:"◆";color:var(--laranja);margin:0 10px;font-size:10px}
-.caixa .preco{font-family:var(--serif);font-size:clamp(56px,14vw,84px);line-height:1;margin-top:30px;color:var(--escuro)}
-.caixa .preco small{font-size:.38em;vertical-align:.9em;margin-right:6px}
-.caixa .forma{margin-top:10px;font-size:15px;color:var(--texto2)}
-.caixa .pilula{margin-top:26px;width:min(100%,460px)}
-.recebe{list-style:none;margin:30px auto 0;padding:0 8px;max-width:440px;text-align:left;display:flex;flex-direction:column;gap:12px}
-.recebe li{display:flex;gap:14px;font-size:16px;line-height:1.5}
-.recebe li::before{content:"◆";color:var(--laranja);font-size:12px;margin-top:4px}
-.tiles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:30px}
-.tile{border:1px solid rgba(242,236,221,.25);border-radius:18px;padding:22px 20px;background:rgba(255,255,255,.04)}
-.tile b{display:block;font-family:var(--serif);font-weight:500;font-size:40px;line-height:1;color:var(--amarelo)}
-.tile span{display:block;margin-top:10px;font-size:12px;letter-spacing:.22em;text-transform:uppercase;line-height:1.6;color:#e2dbc6}
-.proximos{margin-top:40px;text-align:center;font-size:15px;color:#cfc8b2}
-.proximos b{color:var(--creme);font-weight:600}
+/* oferta: o cardápio */
+.oferta{background:var(--verde);color:var(--off);padding-block:30px 100px;position:relative}
+.oferta .grade{display:grid;grid-template-columns:1fr 470px;gap:64px;align-items:center}
+.oferta h2{font-size:clamp(36px,5.4vw,60px);line-height:1.05}
+.oferta h2 em{color:var(--amarelo)}
+.oferta .sub{margin-top:20px;font-size:17px;color:#e2e1d3;max-width:38ch}
+.oferta .proximos{margin-top:30px;font-size:14.5px;color:#c9c8b6;max-width:42ch}
+.oferta .proximos b{color:var(--off);font-weight:600}
+.menu{background:var(--off);color:var(--texto);border-radius:18px;padding:40px 38px 36px;position:relative;box-shadow:0 30px 70px rgba(0,0,0,.28)}
+.menu::before{content:"";position:absolute;inset:10px;border:1px solid var(--linha);border-radius:12px;pointer-events:none}
+.menu .titulo{text-align:center}
+.menu .titulo .etiqueta{display:block}
+.menu .titulo b{display:block;font-family:var(--serif);font-weight:500;font-size:34px;margin-top:6px}
+.menu .titulo b em{color:var(--laranja)}
+.menu ul{list-style:none;margin:26px 0 0;padding:0}
+.menu li{display:flex;align-items:baseline;gap:10px;padding:8px 0;font-size:15.5px;line-height:1.4}
+.menu li .pontos{flex:1 1 16px;border-bottom:1.5px dotted #c9bfa6;transform:translateY(-4px);min-width:16px}
+.menu li .q{flex:none;font-family:var(--serif);font-style:italic;color:var(--laranja-txt)}
+.menu .total{margin-top:24px;padding-top:22px;border-top:1.5px solid var(--verde);display:flex;align-items:flex-end;justify-content:space-between;gap:12px}
+.menu .total span{font-size:13px;color:var(--texto2);line-height:1.5}
+.menu .total b{font-family:var(--serif);font-weight:500;font-size:58px;line-height:.9}
+.menu .total b small{font-size:.4em;vertical-align:.95em;margin-right:4px;color:var(--laranja-txt)}
+.menu .botao{width:100%;justify-content:center;margin-top:26px;padding-right:30px}
+.menu .seguro{margin-top:22px;display:flex;align-items:center;gap:16px;font-size:13.5px;color:var(--texto2);line-height:1.5}
+.menu .seguro svg{width:84px;height:84px;flex:none}
 
-/* faq */
-.faq h2{font-size:clamp(32px,6.6vw,48px);text-align:center;line-height:1.12}
-.perguntas{margin-top:40px;border-top:1px solid #d3c8ad}
-details{border-bottom:1px solid #d3c8ad}
-summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:24px 4px;font-family:var(--serif);font-size:22px;line-height:1.3;color:var(--escuro)}
+/* perguntas */
+.perguntas{padding-block:96px}
+.perguntas .wrap{display:grid;grid-template-columns:320px 1fr;gap:56px}
+.perguntas h2{font-size:clamp(32px,4.6vw,48px);line-height:1.1}
+.lista-p{border-top:1.5px solid var(--verde)}
+details{border-bottom:1px solid var(--linha)}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:22px 2px;font-family:var(--serif);font-size:21px;line-height:1.3}
 summary::-webkit-details-marker{display:none}
-summary::after{content:"+";font-family:var(--sans);font-weight:400;font-size:30px;color:var(--laranja);transition:transform .2s ease;flex:none}
+summary::after{content:"+";flex:none;width:32px;height:32px;border-radius:50%;background:var(--laranja);color:#fff;font-family:var(--sans);font-size:20px;line-height:32px;text-align:center;transition:transform .2s ease}
 details[open] summary::after{transform:rotate(45deg)}
-details p{padding:0 4px 24px;color:var(--texto2);font-size:16.5px}
+details p{padding:0 2px 24px;color:var(--texto2);font-size:16px;max-width:62ch}
 
 /* rodapé */
-.rodape{background:#252f19;color:#d7d0bb;text-align:center;padding-block:72px 40px}
-.rodape .oval{border-color:var(--amarelo)}
-.rodape .oval{background:var(--creme);border-color:var(--laranja)}
-.rodape .oval::after{border-color:rgba(231,111,46,.35)}
-.rodape .oval img{width:66px;height:68px}
-.rodape .lema{margin-top:8px;font-family:var(--serif);font-size:18px;color:#e9e4d6}
-.rodape .nome{font-family:var(--serif);font-style:italic;font-size:34px;color:var(--amarelo);margin-top:24px}
-.rodape p{margin-top:18px;font-family:var(--serif);font-size:17px;line-height:1.6;max-width:40ch;margin-inline:auto}
-.rodape .aviso{font-size:15px;color:#a9a38f}
-.rodape .links{margin-top:28px;font-size:12px;letter-spacing:.3em;text-transform:uppercase;font-weight:600;color:var(--amarelo)}
-.rodape .links a{text-decoration:none}
-.rodape .tec{margin-top:38px;font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--amarelo);font-weight:600}
-.rodape .tec+p{font-family:var(--sans);font-size:14px;margin-top:12px}
+.rodape{background:var(--verde);color:#d9d8ca;padding-block:20px 48px}
+.rodape .linha1{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.rodape .linha1 img{width:54px;height:56px}
+.rodape .logo{color:var(--off);font-size:26px}
+.rodape .logo small{color:#c9c8b6}
+.rodape .lema{margin-left:auto;font-family:var(--serif);font-size:20px;color:var(--off)}
+.rodape .lema em{color:var(--amarelo)}
+.rodape .info{margin-top:34px;padding-top:24px;border-top:1px solid rgba(248,246,239,.18);display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:13.5px;line-height:1.6}
+.rodape a{color:var(--amarelo)}
 
 /* barra fixa */
-.barra{position:fixed;left:0;right:0;bottom:0;z-index:20;padding:10px max(12px, env(safe-area-inset-right, 0px)) calc(12px + env(safe-area-inset-bottom, 0px)) max(12px, env(safe-area-inset-left, 0px))}
-.barra .dentro-barra{max-width:720px;margin:0 auto;background:rgba(46,58,31,.94);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid rgba(242,236,221,.18);border-radius:999px;display:flex;align-items:center;gap:12px;padding:10px 10px 10px 26px;box-shadow:0 16px 40px rgba(0,0,0,.3)}
-.barra .info{min-width:0;color:var(--creme)}
-.barra .info small{display:block;font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--amarelo);font-weight:600;line-height:1.5}
-.barra .info b{font-family:var(--serif);font-weight:500;font-size:28px;line-height:1.1}
-.barra .info b span{font-size:.55em;color:var(--amarelo);margin-right:4px}
-.barra .pilula{margin-left:auto;min-height:50px;padding:12px 26px;font-size:13px;box-shadow:none;flex:none}
+.barra{position:fixed;left:0;right:0;bottom:0;z-index:20;background:rgba(248,246,239,.96);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-top:1px solid var(--linha);padding:10px max(16px, env(safe-area-inset-right, 0px)) calc(10px + env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px))}
+.barra .dentro{max-width:1080px;margin:0 auto;display:flex;align-items:center;gap:14px}
+.barra .dentro img{width:34px;height:36px}
+.barra .t{font-family:var(--serif);font-size:18px;line-height:1.2}
+.barra .t small{display:block;font-family:var(--sans);font-size:12px;color:var(--texto2)}
+.barra .botao{margin-left:auto;min-height:48px;padding:10px 24px 10px 12px;font-size:14px;flex:none}
+.barra .botao .fatia{width:24px;height:24px}
 
-@media (max-width:640px){
-  body{font-size:16px}
-  .sec{padding-block:68px}
-  .cards{grid-template-columns:minmax(0,1fr)}
-  .lista{grid-template-columns:minmax(0,1fr)}
-  .mosaico{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .topo .vol{display:none}
-  .palco .foto-mini{width:30%}
-  .rotulos div{font-size:10.5px;letter-spacing:.16em}
+@media (max-width:860px){
+  .abertura .wrap,.historia .wrap,.oferta .grade,.perguntas .wrap{grid-template-columns:minmax(0,1fr)}
+  .abertura{padding-bottom:72px}
+  .prato{margin:20px auto 0;width:min(400px,86%)}
+  .abertura .onda-fundo{top:auto;bottom:0;right:-160px;width:520px;transform:scaleY(-1)}
+  .historia .wrap{gap:30px;justify-items:start}
+  .retrato{width:200px}
+  .quatro{grid-template-columns:repeat(2,minmax(0,1fr));gap:30px 24px}
+  .horas::before{left:14px}
+  .hora{grid-template-columns:minmax(0,1fr);padding-left:44px}
+  .hora::before{left:7px;top:40px}
+  .hora .quando{text-align:left;padding:0 0 10px}
+  .hora .conteudo{padding-left:0}
+  .hora figure{width:min(240px,70%);margin-top:24px}
+  .convite .caixa{border-radius:28px;padding:30px 26px;flex-direction:column;text-align:center}
+  .menu{padding:34px 24px 30px}
+  .rodape .lema{margin-left:0;width:100%}
 }
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.pilula{transition:none}}
+@media (max-width:520px){
+  body{font-size:16px}
+  .quatro{grid-template-columns:minmax(0,1fr)}
+  .topo a.ir{display:none}
+  .barra .t small{display:none}
+  .barra .dentro img{display:none}
+  .menu .total b{font-size:48px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.botao,summary::after{transition:none}}
 </style>
 
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="folha" viewBox="0 0 24 24"><path d="M20 4C10 4 5 9 5 15c0 2 .5 3.5 1 5 9 0 14-6 14-16Z" fill="currentColor"/><path d="M6 20 15 10" stroke="#F8F6EF" stroke-width="1.2" fill="none" stroke-linecap="round"/></symbol>
+    <symbol id="fatia" viewBox="-40 -40 80 80">
+      <circle r="38" fill="#F4B942"/><circle r="32" fill="#FFF4DA"/>
+      <g fill="#F4B942">
+        <path d="M2.6 1 L27.5 3 A28 28 0 0 1 21.6 17.4Z"/><path d="M1 2.6 L17.4 21.6 A28 28 0 0 1 3 27.5Z"/>
+        <path d="M-1 2.6 L-3 27.5 A28 28 0 0 1 -17.4 21.6Z"/><path d="M-2.6 1 L-21.6 17.4 A28 28 0 0 1 -27.5 3Z"/>
+        <path d="M-2.6 -1 L-27.5 -3 A28 28 0 0 1 -21.6 -17.4Z"/><path d="M-1 -2.6 L-17.4 -21.6 A28 28 0 0 1 -3 -27.5Z"/>
+        <path d="M1 -2.6 L3 -27.5 A28 28 0 0 1 17.4 -21.6Z"/><path d="M2.6 -1 L21.6 -17.4 A28 28 0 0 1 27.5 -3Z"/>
+      </g>
+    </symbol>
+  </defs>
+</svg>
+
 <header class="topo">
-  <div class="wrap wide">
+  <div class="wrap">
     <img src="img/simbolo.svg" alt="" aria-hidden="true">
-    <div class="marca">Sem trigo, sem <em>culpa.</em><small>Receitas sem glúten</small></div>
-    <div class="vol">Volume 1<br>Mesa de Domingo</div>
+    <div class="logo">Sem trigo, sem <em>culpa.</em><small>Receitas sem glúten</small></div>
+    <a class="ir" href="#oferta">Mesa de Domingo · R$ 19,90</a>
   </div>
 </header>
 
 <main>
-<section class="escuro heroi">
+<section class="abertura">
+  <svg class="onda-fundo" viewBox="0 0 760 640" aria-hidden="true">
+    <path d="M760 0V560C690 600 600 610 540 560C470 500 520 410 440 360C360 310 250 360 190 290C140 230 180 120 120 60C90 30 60 10 20 0Z" fill="#2E3A1F"/>
+    <path d="M90 0C150 50 140 150 200 230C260 310 360 290 440 330C530 375 500 470 570 530C620 570 690 580 760 540" fill="none" stroke="#F4B942" stroke-width="1.6"/>
+  </svg>
   <div class="wrap">
-    <div class="olho">Volume 1 · 19 receitas testadas</div>
-    <h1>Mesa de Domingo: a comida de vó de volta, <em>sem glúten.</em></h1>
-    <p class="lead">Pão de queijo, cuca, parmegiana e pudim. As receitas que fazem a gente se sentir em casa, feitas e refeitas na minha cozinha para quem não pode comer glúten.</p>
-    <div class="specs">Ebook em PDF · 44 páginas · foto de cada receita<br>Medidas em gramas · chega na hora no seu e-mail</div>
-    <a class="pilula" href="#oferta">Quero o meu por R$ 19,90</a>
-    <div class="assina">Comida de verdade, sem glúten.</div>
-  </div>
-  <div class="palco">
-    <img class="foto-mini m2" src="img/pudim.jpg" alt="Pudim de leite condensado">
-    <img class="capa" src="img/capa.jpg" alt="Capa do ebook Mesa de Domingo sem trigo">
-    <img class="foto-mini m1" src="img/bolo-cenoura.jpg" alt="Bolo de cenoura com cobertura de brigadeiro">
-  </div>
-</section>
-
-<section class="faixa" aria-label="O que você leva">
-  <ul>
-    <li>Pagamento único</li>
-    <li>Acesso na hora, para sempre</li>
-    <li>Garantia de 7 dias</li>
-  </ul>
-</section>
-
-<section class="sec claro historia">
-  <div class="wrap">
-    <h2>Eu não tive medo da doença. <em>Tive medo da mesa.</em></h2>
-    <div class="texto">
-      <p>Quando recebi o diagnóstico de doença celíaca, o que me assustou foi o almoço de domingo, o bolo de aniversário, o café na casa da vó. Comida é sentimento, e eu não queria perder essas lembranças.</p>
-      <p>Foi esse medo que me fez testar receita atrás de receita até elas darem certo sem glúten. O Mesa de Domingo junta as primeiras 19: comida de mãe e de vó, sem dieta e sem receita triste “para quem não pode”.</p>
+    <div>
+      <div class="etiqueta">Volume 1 · Mesa de Domingo</div>
+      <h1>A comida de vó de volta, <em>sem glúten.</em></h1>
+      <div class="divisor" aria-hidden="true"><svg><use href="#folha"/></svg></div>
+      <p class="lead">Pão de queijo, cuca, parmegiana e pudim. As receitas que fazem a gente se sentir em casa, feitas e refeitas na minha cozinha para quem não pode comer glúten.</p>
+      <div class="acao">
+        <a class="botao" href="#oferta"><svg class="fatia" aria-hidden="true"><use href="#fatia"/></svg>Quero o meu</a>
+        <div class="valor">R$ 19,90<small>pagamento único · garantia de 7 dias</small></div>
+      </div>
+      <div class="miudo"><span>19 receitas testadas</span><span>Foto de cada receita</span><span>Medidas em gramas</span></div>
     </div>
-    <div class="autora">
-      <img src="img/autora-sorriso.jpg" alt="Mikaela Perez Guedes">
-      <div class="nome">Mikaela Perez Guedes</div>
-      <div class="papel">Celíaca e autora</div>
+    <div class="prato">
+      <svg class="arco" viewBox="0 0 100 100" aria-hidden="true"><path d="M30 92A46 46 0 0 1 46 4.2" fill="none" stroke="#E76F2E" stroke-width=".9" stroke-linecap="round"/></svg>
+      <div class="foto"><img src="img/pudim.jpg" alt="Pudim de leite condensado da receita do ebook"></div>
+      <span class="bolinha b1"></span><span class="bolinha b2"></span>
+      <img class="livro" src="img/capa.jpg" alt="Capa do ebook Mesa de Domingo">
+      <svg class="selo" viewBox="0 0 120 120" role="img" aria-label="Garantia de 7 dias">
+        <circle cx="60" cy="60" r="58" fill="#2E3A1F"/>
+        <path id="volta" d="M60 60m-42 0a42 42 0 1 1 84 0a42 42 0 1 1 -84 0" fill="none"/>
+        <text font-family="Montserrat, Arial, sans-serif" font-size="10.5" font-weight="600" letter-spacing="3.2" fill="#F8F6EF"><textPath href="#volta">GARANTIA · SEM RISCO · GARANTIA · SEM RISCO ·</textPath></text>
+        <text x="60" y="66" text-anchor="middle" font-family="Playfair Display, Georgia, serif" font-size="30" fill="#F4B942">7 dias</text>
+      </svg>
     </div>
   </div>
 </section>
 
-<section class="sec claro2 pilares">
-  <div class="wrap wide">
+<section class="historia">
+  <svg class="onda" viewBox="0 0 1440 70" preserveAspectRatio="none" aria-hidden="true" style="margin-top:-41px"><path d="M0 40C240 0 420 70 720 40C1020 10 1200 60 1440 30V70H0Z" fill="#2E3A1F"/></svg>
+  <div class="wrap" style="margin-top:40px">
+    <div class="retrato">
+      <svg viewBox="0 0 100 100" aria-hidden="true"><path d="M80 14A46 46 0 1 1 20 14" fill="none" stroke="#E76F2E" stroke-width="1" stroke-linecap="round"/><circle cx="86" cy="20" r="4" fill="#F4B942"/></svg>
+      <img src="img/autora-sorriso.jpg" alt="Mikaela Perez Guedes, autora do ebook">
+    </div>
+    <div>
+      <h2>Eu não tive medo da doença. <em>Tive medo da mesa.</em></h2>
+      <div class="texto">
+        <p>Quando recebi o diagnóstico de doença celíaca, o que me assustou foi o almoço de domingo, o bolo de aniversário, o café na casa da vó. Comida é sentimento, e eu não queria perder essas lembranças.</p>
+        <p>Foi esse medo que me fez testar receita atrás de receita até elas darem certo sem glúten. O Mesa de Domingo junta as primeiras 19: comida de mãe e de vó, sem dieta e sem receita triste “para quem não pode”.</p>
+      </div>
+      <div class="divisor claro" aria-hidden="true" style="margin-top:28px;max-width:220px"><svg><use href="#folha"/></svg></div>
+      <div class="assina" style="margin-top:14px">Mikaela Perez Guedes<small>celíaca e autora</small></div>
+    </div>
+  </div>
+</section>
+
+<section class="domingo" id="receitas">
+  <svg class="onda" viewBox="0 0 1440 70" preserveAspectRatio="none" aria-hidden="true" style="margin-top:-96px;transform:scaleY(-1)"><path d="M0 40C240 0 420 70 720 40C1020 10 1200 60 1440 30V70H0Z" fill="#2E3A1F"/></svg>
+  <div class="wrap" style="margin-top:70px">
+    <div class="cabeca">
+      <div class="etiqueta">As 19 receitas</div>
+      <h2>Um domingo inteiro, <em>do café à sobremesa.</em></h2>
+      <p>O ebook segue o dia: começa na véspera, com o mix de farinhas, e termina no pudim. Cada receita tem foto e diz se é fácil ou média.</p>
+      <div class="legenda">
+        <span><span class="nivel" aria-hidden="true"><i></i><i class="v"></i></span>fácil</span>
+        <span><span class="nivel" aria-hidden="true"><i></i><i></i></span>média</span>
+      </div>
+    </div>
+
+    <div class="horas">
+      <div class="hora">
+        <div class="quando">sábado</div>
+        <div class="conteudo">
+          <h3>Na véspera, o Mix da Mika</h3>
+          <p class="por">A base dos bolos e da cuca. Farinha de arroz, fécula de batata e polvilho doce, sem comprar mix pronto.</p>
+          <ul class="cardapio">
+            <li><span class="nome">Mix de farinhas da Mika</span><span class="pontos"></span><span class="nivel" aria-label="fácil"><i></i><i class="v"></i></span></li>
+          </ul>
+        </div>
+        <figure><img src="img/mix-redondo.jpg" alt="Mix de farinhas da Mika em pote de vidro" loading="lazy"></figure>
+      </div>
+
+      <div class="hora">
+        <div class="quando">8h</div>
+        <div class="conteudo">
+          <h3>Café na mesa</h3>
+          <p class="por">Sete receitas para o café da manhã e o lanche da tarde.</p>
+          <ul class="cardapio">
+            <li><span class="nome">Pão de queijo mineiro</span><span class="pontos"></span><span class="nivel" aria-label="fácil"><i></i><i class="v"></i></span></li>
+            <li><span class="nome">Bolo de fubá cremoso</span><span class="pontos"></span><span class="nivel" aria-label="fácil"><i></i><i class="v"></i></span></li>
+            <li><span class="nome">Bolo de cenoura com cobertura de brigadeiro</span><span class="pontos"></span><span class="nivel" aria-label="fácil"><i></i><i class="v"></i></span></li>
+            <li><span class="nome">Cuca de doce de leite com farofa</span><span class="pontos"></span><span class="nivel" aria-label="fácil"><i></i><i class="v"></i></span></li>
+            <li><span class="nome">Biscoitinhos de leite condensado com maisena</span><span class="pontos"></span><span class="nivel" aria-label="fácil"><i></i><i class="v"></i></span></li>
+            <li><span class="nome">Bolo de maisena 5-10-15</span><span class="pontos"></span><span class="nivel" aria-label="fácil"><i></i><i class="v"></i></span></li>
+            <li><span class="nome">Biscoito de polvilho assado</span><span class="pontos"></span><span class="nivel" aria-label="média"><i></i><i></i></span></li>
+          </ul>
+        </div>
+        <figure><img src="img/pao-de-queijo.jpg" alt="Pão de queijo mineiro" loading="lazy"></figure>
+      </div>
+
+      <div class="hora">
+        <div class="quando">11h</div>
+        <div class="conteudo">
+          <h3>Beliscando antes do almoço</h3>
+          <p class="por">Dois salgados para quem chega com fome.</p>
+          <ul class="cardapio">
+            <li><span class="nome">Coxinha de mandioca com frango</span><span class="pontos"></span><span class="nivel" aria-label="média"><i></i><i></i></span></li>
+            <li><span class="nome">Torta salgada de liquidificador</span><span class="pontos"></span><span class="nivel" aria-label="fácil"><i></i><i class="v"></i></span></li>
+          </ul>
+        </div>
+        <figure><img src="img/coxinha-redondo.jpg" alt="Coxinha de mandioca com frango" loading="lazy"></figure>
+      </div>
+
+      <div class="hora">
+        <div class="quando">13h</div>
+        <div class="conteudo">
+          <h3>Almoço de domingo</h3>
+          <p class="por">Cinco pratos para a família inteira sentar junto.</p>
+          <ul class="cardapio">
+            <li><span class="nome">Frango à parmegiana</span><span class="pontos"></span><span class="nivel" aria-label="média"><i></i><i></i></span></li>
+            <li><span class="nome">Strogonoff de frango</span><span class="pontos"></span><span class="nivel" aria-label="fácil"><i></i><i class="v"></i></span></li>
+            <li><span class="nome">Escondidinho de mandioca com carne</span><span class="pontos"></span><span class="nivel" aria-label="média"><i></i><i></i></span></li>
+            <li><span class="nome">Nhoque de batata</span><span class="pontos"></span><span class="nivel" aria-label="média"><i></i><i></i></span></li>
+            <li><span class="nome">Feijoada de sábado</span><span class="pontos"></span><span class="nivel" aria-label="média"><i></i><i></i></span></li>
+          </ul>
+        </div>
+        <figure><img src="img/feijoada-redondo.jpg" alt="Feijoada de sábado com couve, farofa e laranja" loading="lazy"></figure>
+      </div>
+
+      <div class="hora">
+        <div class="quando">16h</div>
+        <div class="conteudo">
+          <h3>A sobremesa</h3>
+          <p class="por">Quatro doces de vó, daqueles que somem da travessa.</p>
+          <ul class="cardapio">
+            <li><span class="nome">Pudim de leite condensado</span><span class="pontos"></span><span class="nivel" aria-label="média"><i></i><i></i></span></li>
+            <li><span class="nome">Pasta frola</span><span class="pontos"></span><span class="nivel" aria-label="média"><i></i><i></i></span></li>
+            <li><span class="nome">Sagu de vinho com creme</span><span class="pontos"></span><span class="nivel" aria-label="fácil"><i></i><i class="v"></i></span></li>
+            <li><span class="nome">Brigadeiro de panela</span><span class="pontos"></span><span class="nivel" aria-label="fácil"><i></i><i class="v"></i></span></li>
+          </ul>
+        </div>
+        <figure><img src="img/pasta-frola.jpg" alt="Pasta frola" loading="lazy"></figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="promessas">
+  <div class="wrap">
+    <div class="etiqueta">Por que dá certo</div>
     <h2>Um ebook que põe a mesa <em>e cuida de quem senta nela.</em></h2>
-    <p class="sub">Cada página existe por causa de uma destas quatro coisas.</p>
-    <div class="cards">
-      <article class="pilar">
-        <div class="oval"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 5 9 11v11c0 10 6.5 17.5 15 21 8.5-3.5 15-11 15-21V11Z"/><path d="m17 24 5 5 9-10"/></svg></div>
+    <div class="quatro">
+      <article>
+        <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M40 7C22 7 10 17 10 31c0 4 1 7 2.5 10C30 41 40 28 40 7Z"/><path d="M12.5 41 31 19"/><path d="M20 31h8"/><path d="M24 26v-6"/></svg>
         <h3>Seguro</h3>
         <p>Os ingredientes com risco de contaminação vêm marcados com “rótulo”, e o guia do começo ensina a deixar a cozinha segura.</p>
       </article>
-      <article class="pilar">
-        <div class="oval"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M8 30h32"/><path d="M11 30a13 13 0 0 1 26 0"/><path d="M24 17v-6"/><path d="M20 11h8"/><path d="M10 34h28l-2 6H12Z"/></svg></div>
+      <article>
+        <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M7 24h34c0 9.5-7.6 17-17 17S7 33.5 7 24Z"/><path d="M27 24 37 7"/><circle cx="37.5" cy="6.5" r="2"/></svg>
         <h3>Testado</h3>
         <p>Cada receita foi feita e refeita na minha cozinha. As medidas vêm em gramas, porque xícara varia e bolo sem glúten não perdoa.</p>
       </article>
-      <article class="pilar">
-        <div class="oval"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 40S8 30.5 8 19.5A8.5 8.5 0 0 1 24 15a8.5 8.5 0 0 1 16 4.5C40 30.5 24 40 24 40Z"/></svg></div>
+      <article>
+        <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 40S8 30.5 8 19.5A8.5 8.5 0 0 1 24 15a8.5 8.5 0 0 1 16 4.5C40 30.5 24 40 24 40Z"/></svg>
         <h3>Afetivo</h3>
-        <p>Nada de dieta nem contagem de caloria. Sem glúten não quer dizer sem açúcar, sem leite e sem sabor: é cuca, sagu, feijoada de sábado e o nhoque do dia 29.</p>
+        <p>Nada de dieta nem contagem de caloria. Sem glúten não quer dizer sem açúcar, sem leite e sem sabor.</p>
       </article>
-      <article class="pilar">
-        <div class="oval"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="13" y="14" width="22" height="27" rx="4"/><path d="M15 9h18v5H15Z"/><path d="M13 24h22"/></svg></div>
+      <article>
+        <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="8"/><path d="M24 6v5M24 37v5M6 24h5M37 24h5M11.3 11.3l3.5 3.5M33.2 33.2l3.5 3.5M11.3 36.7l3.5-3.5M33.2 14.8l3.5-3.5"/></svg>
         <h3>Simples</h3>
-        <p>Só ingredientes de supermercado comum, sem psyllium nem goma xantana. O Mix da Mika, feito em casa, serve para os bolos e a cuca, e cada receita diz se é fácil, média ou difícil.</p>
+        <p>Só ingredientes de supermercado comum, sem psyllium nem goma xantana.</p>
       </article>
     </div>
-    <div class="cta-centro"><a class="pilula" href="#oferta">Garantir o meu</a></div>
   </div>
 </section>
 
-<section class="sec claro dentro" id="receitas">
-  <div class="wrap wide">
-    <h2>O que tem <em>dentro.</em></h2>
-    <div class="mosaico">
-      <figure><img src="img/pudim.jpg" alt="Pudim de leite condensado" loading="lazy"><figcaption>Pudim de leite condensado</figcaption></figure>
-      <figure><img src="img/parmegiana.jpg" alt="Frango à parmegiana" loading="lazy"><figcaption>Frango à parmegiana</figcaption></figure>
-      <figure><img src="img/pasta-frola.jpg" alt="Pasta frola" loading="lazy"><figcaption>Pasta frola</figcaption></figure>
-      <figure><img src="img/bolo-maisena.jpg" alt="Bolo de maisena" loading="lazy"><figcaption>Bolo de maisena 5-10-15</figcaption></figure>
-      <figure><img src="img/pao-de-queijo.jpg" alt="Pão de queijo mineiro" loading="lazy"><figcaption>Pão de queijo mineiro</figcaption></figure>
-      <figure><img src="img/cuca-banana.jpg" alt="Cuca de doce de leite com farofa" loading="lazy"><figcaption>Cuca de doce de leite</figcaption></figure>
-    </div>
-    <div class="lista">
-      <div class="grupo">
-        <h3>Café e lanche da tarde <span>7</span></h3>
-        <ul>
-          <li>Pão de queijo mineiro <span class="nivel n-f">Fácil</span></li>
-          <li>Bolo de fubá cremoso <span class="nivel n-f">Fácil</span></li>
-          <li>Bolo de cenoura com cobertura de brigadeiro <span class="nivel n-f">Fácil</span></li>
-          <li>Cuca de doce de leite com farofa <span class="nivel n-f">Fácil</span></li>
-          <li>Biscoitinhos de leite condensado com maisena <span class="nivel n-f">Fácil</span></li>
-          <li>Bolo de maisena 5-10-15 <span class="nivel n-f">Fácil</span></li>
-          <li>Biscoito de polvilho assado <span class="nivel n-m">Médio</span></li>
-        </ul>
-      </div>
-      <div class="grupo">
-        <h3>Salgados <span>2</span></h3>
-        <ul>
-          <li>Coxinha de mandioca com frango <span class="nivel n-m">Médio</span></li>
-          <li>Torta salgada de liquidificador <span class="nivel n-f">Fácil</span></li>
-        </ul>
-      </div>
-      <div class="grupo">
-        <h3>Almoço de domingo <span>5</span></h3>
-        <ul>
-          <li>Escondidinho de mandioca com carne <span class="nivel n-m">Médio</span></li>
-          <li>Nhoque de batata <span class="nivel n-m">Médio</span></li>
-          <li>Frango à parmegiana <span class="nivel n-m">Médio</span></li>
-          <li>Strogonoff de frango <span class="nivel n-f">Fácil</span></li>
-          <li>Feijoada de sábado <span class="nivel n-m">Médio</span></li>
-        </ul>
-      </div>
-      <div class="grupo">
-        <h3>Doces e sobremesas <span>4</span></h3>
-        <ul>
-          <li>Sagu de vinho com creme <span class="nivel n-f">Fácil</span></li>
-          <li>Pudim de leite condensado <span class="nivel n-m">Médio</span></li>
-          <li>Brigadeiro de panela <span class="nivel n-f">Fácil</span></li>
-          <li>Pasta frola <span class="nivel n-m">Médio</span></li>
-        </ul>
-      </div>
-      <div class="grupo">
-        <h3>A base de tudo <span>1</span></h3>
-        <ul>
-          <li>Mix de farinhas da Mika <span class="nivel n-f">Fácil</span></li>
-        </ul>
-      </div>
-    </div>
+<section class="manifesto">
+  <div class="wrap estreito">
+    <svg class="selo-marca" viewBox="0 0 120 120" role="img" aria-label="Selo Sem trigo, sem culpa">
+      <circle cx="60" cy="60" r="57" fill="none" stroke="#2E3A1F" stroke-width="1.5"/>
+      <path id="volta3" d="M60 60m-43 0a43 43 0 1 1 86 0a43 43 0 1 1 -86 0" fill="none"/>
+      <text font-family="Montserrat, Arial, sans-serif" font-size="11" font-weight="600" letter-spacing="3.6" fill="#2E3A1F"><textPath href="#volta3">SEM TRIGO, · SEM CULPA. ·</textPath></text>
+      <use href="#folha" x="47" y="47" width="26" height="26" style="color:#2E3A1F"/>
+    </svg>
+    <p>Receitas reais. Ingredientes simples.<br><em>Sem glúten. Sem culpa.</em></p>
+    <div class="divisor centro" aria-hidden="true" style="max-width:240px;margin-top:28px"><svg><use href="#folha"/></svg></div>
   </div>
 </section>
 
-<section class="sec paginas">
-  <div class="wrap wide">
-    <h2>Bonito para dar vontade, <em>claro para dar certo.</em></h2>
-    <div class="leque" aria-label="Páginas do ebook">
-      <img class="p1" src="img/pag5.jpg" alt="Página Antes de começar" loading="lazy">
-      <img class="p2" src="img/pag39.jpg" alt="Página da receita de pudim" loading="lazy">
-      <img class="p3" src="img/pag7.jpg" alt="Página do Mix de farinhas da Mika" loading="lazy">
-    </div>
-    <div class="rotulos">
-      <div>Antes de começar</div>
-      <div>Passo a passo</div>
-      <div>Mix da Mika</div>
-    </div>
-    <p class="frase">Uma foto de página inteira antes de cada receita, porque a gente come com os olhos primeiro.</p>
-    <div class="cta-centro"><a class="pilula" href="#oferta">Quero o meu</a></div>
-  </div>
-</section>
-
-<section class="sec claro notas">
+<section class="folhear">
   <div class="wrap">
-    <h2>Quem já cozinhou <em>com a gente.</em></h2>
-    <div class="envelope" aria-hidden="true">
-      <div class="aba"></div>
-      <div class="cartao">Uma pequena nota · da sua cozinha</div>
-      <div class="corpo"><div class="selo"><small>Notas da</small><b>COZINHA</b><small>de quem já fez as receitas</small></div></div>
+    <div class="topo-sec">
+      <h2>Bonito para dar vontade, <em>claro para dar certo.</em></h2>
+      <p>Uma foto de página inteira antes de cada receita, porque a gente come com os olhos primeiro. Arraste para folhear.</p>
     </div>
-    <p class="texto">Este espaço é das primeiras leitoras. Fez uma receita? Me manda a foto no @semtrigosemculpa que ela vem morar aqui.</p>
+    <div class="folhas" tabindex="0" aria-label="Páginas do ebook">
+      <figure><img src="img/pag5.jpg" alt="Página Antes de começar" loading="lazy"><figcaption>Antes de começar<span>rótulos e cozinha segura</span></figcaption></figure>
+      <figure><img src="img/pag7.jpg" alt="Página do Mix de farinhas da Mika" loading="lazy"><figcaption>Mix da Mika<span>a base que você faz em casa</span></figcaption></figure>
+      <figure><img src="img/pag39.jpg" alt="Página da receita de pudim" loading="lazy"><figcaption>Passo a passo<span>medidas em gramas e em colheres</span></figcaption></figure>
+    </div>
   </div>
 </section>
 
-<section class="sec escuro oferta" id="oferta">
-  <div class="wrap">
-    <h2>Mesa de Domingo <em>na sua cozinha hoje.</em></h2>
-    <p class="sub">O ebook está pronto. Você paga uma vez, recebe na hora e pode voltar a ele sempre que for para a cozinha.</p>
+<section class="convite">
+  <div class="wrap estreito">
     <div class="caixa">
-      <div class="tarja">Ebook completo</div>
-      <div class="preco"><small>R$</small>19,90</div>
-      <div class="forma">pagamento único, por Pix ou cartão</div>
-      <a class="pilula" id="comprar" href="#oferta">Eu quero</a>
-      <ul class="recebe">
-        <li>O ebook Mesa de Domingo em PDF, com 19 receitas e uma foto de cada</li>
-        <li>O Mix de farinhas da Mika para fazer em casa</li>
-        <li>O guia Antes de começar, com rótulos e cozinha segura</li>
-        <li>Acesso para sempre, no celular, no tablet ou impresso</li>
-      </ul>
+      <img src="img/simbolo.svg" alt="" aria-hidden="true">
+      <p>Este espaço é das primeiras leitoras. Fez uma receita? Me manda a foto no <a href="https://www.instagram.com/semtrigosemculpa/" target="_blank" rel="noopener">@semtrigosemculpa</a> que ela vem morar aqui.</p>
     </div>
-    <div class="tiles">
-      <div class="tile"><b>19</b><span>receitas testadas</span></div>
-      <div class="tile"><b>44</b><span>páginas em PDF</span></div>
-      <div class="tile"><b>1</b><span>foto para cada receita</span></div>
-      <div class="tile"><b>7</b><span>dias de garantia</span></div>
-    </div>
-    <p class="proximos">Quer ir além? <b>Cozinha de Vó</b>, com mais 30 receitas, nenhuma repetida, e <b>Sem Trigo Sem Culpa, o livro</b>, vêm aí.</p>
   </div>
 </section>
 
-<section class="sec claro faq">
+<section class="oferta" id="oferta">
+  <svg class="onda" viewBox="0 0 1440 70" preserveAspectRatio="none" aria-hidden="true" style="margin-top:-99px"><path d="M0 40C240 0 420 70 720 40C1020 10 1200 60 1440 30V70H0Z" fill="#2E3A1F"/></svg>
+  <div class="wrap" style="margin-top:70px">
+    <div class="grade">
+      <div>
+        <div class="etiqueta" style="color:var(--amarelo)">Pronto para baixar</div>
+        <h2 style="margin-top:14px">Mesa de Domingo <em>na sua cozinha hoje.</em></h2>
+        <p class="sub">O ebook está pronto. Você paga uma vez, recebe na hora e pode voltar a ele sempre que for para a cozinha.</p>
+        <p class="proximos">Quer ir além? <b>Cozinha de Vó</b>, com mais 30 receitas, nenhuma repetida, e <b>Sem Trigo Sem Culpa, o livro</b>, vêm aí.</p>
+      </div>
+      <div class="menu">
+        <div class="titulo"><span class="etiqueta">O que vem na mesa</span><b>Volume 1 · <em>Mesa de Domingo</em></b></div>
+        <ul>
+          <li><span>Receitas testadas, cada uma com foto</span><span class="pontos"></span><span class="q">19</span></li>
+          <li><span>Mix de farinhas da Mika</span><span class="pontos"></span><span class="q">incluso</span></li>
+          <li><span>Guia Antes de começar</span><span class="pontos"></span><span class="q">incluso</span></li>
+          <li><span>Páginas em PDF, formato A5</span><span class="pontos"></span><span class="q">44</span></li>
+          <li><span>Acesso no celular, tablet ou impresso</span><span class="pontos"></span><span class="q">para sempre</span></li>
+        </ul>
+        <div class="total"><span>pagamento único<br>Pix ou cartão</span><b><small>R$</small>19,90</b></div>
+        <a class="botao" id="comprar" href="#oferta"><svg class="fatia" aria-hidden="true"><use href="#fatia"/></svg>Eu quero o meu</a>
+        <div class="seguro">
+          <svg viewBox="0 0 120 120" aria-hidden="true">
+            <circle cx="60" cy="60" r="58" fill="none" stroke="#2E3A1F" stroke-width="1.5"/>
+            <path id="volta2" d="M60 60m-44 0a44 44 0 1 1 88 0a44 44 0 1 1 -88 0" fill="none"/>
+            <text font-family="Montserrat, Arial, sans-serif" font-size="10" font-weight="600" letter-spacing="3" fill="#2E3A1F"><textPath href="#volta2">SEM TRIGO · SEM CULPA · SEM RISCO ·</textPath></text>
+            <text x="60" y="67" text-anchor="middle" font-family="Playfair Display, Georgia, serif" font-size="28" fill="#E76F2E">7 dias</text>
+          </svg>
+          <span>Se não for o que você esperava, é só pedir o reembolso em até 7 dias pela plataforma de pagamento. O valor volta inteiro.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="perguntas">
   <div class="wrap">
-    <h2>Perguntas <em>frequentes.</em></h2>
-    <div class="perguntas">
+    <div>
+      <div class="etiqueta">Antes de comprar</div>
+      <h2 style="margin-top:14px">Perguntas <em>de quem chega.</em></h2>
+    </div>
+    <div class="lista-p">
       <details>
         <summary>Como recebo o meu ebook?</summary>
         <p>Assim que o pagamento é aprovado, chega no seu e-mail o acesso ao PDF. No Pix costuma ser na hora; no cartão, em poucos minutos.</p>
@@ -421,7 +532,7 @@ details p{padding:0 4px 24px;color:var(--texto2);font-size:16.5px}
       </details>
       <details>
         <summary>É um ebook fitness?</summary>
-        <p>Não. É comida de verdade: bolo, pudim, pizza, coxinha. A única coisa que sai é o glúten.</p>
+        <p>Não. É comida de verdade: bolo, pudim, coxinha, parmegiana. A única coisa que sai é o glúten.</p>
       </details>
       <details>
         <summary>E se eu não gostar?</summary>
@@ -433,22 +544,25 @@ details p{padding:0 4px 24px;color:var(--texto2);font-size:16.5px}
 </main>
 
 <footer class="rodape">
-  <div class="wrap">
-    <div class="oval"><img src="img/simbolo.svg" alt="" aria-hidden="true"></div>
-    <div class="nome">Sem trigo, sem culpa.</div>
-    <p class="lema">Sabor, equilíbrio e <em>liberdade</em> em cada receita.</p>
-    <p>O Mesa de Domingo é o volume 1 da Sem Trigo Sem Culpa, escrito por Mikaela Perez Guedes, celíaca, para quem quer voltar a comer o que ama.</p>
-    <p class="aviso">Este ebook não substitui orientação médica ou nutricional.</p>
-    <div class="links"><a href="https://www.instagram.com/semtrigosemculpa/" target="_blank" rel="noopener">Instagram</a></div>
-    <div class="tec">Dados técnicos</div>
-    <p>Ebook em PDF · 44 páginas · formato A5 · Volume 1</p>
+  <svg class="onda" viewBox="0 0 1440 70" preserveAspectRatio="none" aria-hidden="true" style="margin-top:-89px"><path d="M0 40C240 0 420 70 720 40C1020 10 1200 60 1440 30V70H0Z" fill="#2E3A1F"/></svg>
+  <div class="wrap" style="margin-top:40px">
+    <div class="linha1">
+      <img src="img/simbolo.svg" alt="" aria-hidden="true">
+      <div class="logo">Sem trigo, sem <em>culpa.</em><small>Receitas sem glúten</small></div>
+      <p class="lema">Sabor, equilíbrio e <em>liberdade</em> em cada receita.</p>
+    </div>
+    <div class="info">
+      <p>Mesa de Domingo · Volume 1 · Ebook em PDF, 44 páginas, formato A5.<br>Escrito por Mikaela Perez Guedes, celíaca. Não substitui orientação médica ou nutricional.</p>
+      <p><a href="https://www.instagram.com/semtrigosemculpa/" target="_blank" rel="noopener">@semtrigosemculpa</a></p>
+    </div>
   </div>
 </footer>
 
 <div class="barra" role="region" aria-label="Comprar">
-  <div class="dentro-barra">
-    <div class="info"><small>Mesa de Domingo · PDF</small><b><span>R$</span>19,90</b></div>
-    <a class="pilula" href="#oferta" data-compra>Eu quero</a>
+  <div class="dentro">
+    <img src="img/simbolo.svg" alt="" aria-hidden="true">
+    <div class="t">Mesa de Domingo<small>19 receitas sem glúten · PDF</small></div>
+    <a class="botao" href="#oferta" data-compra><svg class="fatia" aria-hidden="true"><use href="#fatia"/></svg>R$ 19,90</a>
   </div>
 </div>
 
