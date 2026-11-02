@@ -1,0 +1,451 @@
+<title>Mesa de Domingo sem trigo</title>
+<meta name="description" content="19 receitas de vó sem glúten, testadas na cozinha de casa por uma celíaca. Ebook em PDF, com foto de cada receita.">
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@400;500;600&display=swap">
+<style>
+/* Editorial de cozinha de vó: blocos verde-escuro e creme alternados, títulos em Playfair com final em itálico, selos ovais e botões em pílula amarela. */
+:root{
+  color-scheme: light;
+  --escuro:#282B16;      /* verde escuro da marca: fundo dos blocos fortes */
+  --escuro2:#33371d;
+  --verde:#4B5831;
+  --creme:#F2ECDD;       /* off-white da marca */
+  --creme2:#F8F4EA;
+  --tomate:#DA4731;
+  --laranja:#E07026;
+  --amarelo:#E5A339;
+  --ouro-claro:#F0C772;
+  --linha:#B8692E;
+  --texto:#1E220E;
+  --texto2:#4a4c3a;
+  --serif:'Playfair Display', Georgia, 'Times New Roman', serif;
+  --sans:'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--creme);color:var(--texto);font-family:var(--sans);font-size:17px;line-height:1.7;-webkit-font-smoothing:antialiased;padding-bottom:110px}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:var(--serif);font-weight:500;text-wrap:balance;margin:0;letter-spacing:-.01em}
+h1 em,h2 em,h3 em{font-style:italic;color:var(--amarelo)}
+.claro h2 em,.claro h3 em{color:var(--linha)}
+p{margin:0}
+.wrap{max-width:720px;margin:0 auto;padding-left:max(24px, env(safe-area-inset-left, 0px));padding-right:max(24px, env(safe-area-inset-right, 0px))}
+.wide{max-width:1040px}
+.sec{padding-block:88px}
+.escuro{background:var(--escuro);color:var(--creme)}
+.claro{background:var(--creme)}
+.claro2{background:var(--creme2)}
+.olho{font-family:var(--sans);font-size:13px;font-weight:600;letter-spacing:.32em;text-transform:uppercase}
+.centro{text-align:center}
+.pilula{display:inline-flex;align-items:center;justify-content:center;min-height:56px;padding:16px 36px;border-radius:999px;background:linear-gradient(180deg,var(--ouro-claro),var(--amarelo));color:var(--escuro);font-family:var(--sans);font-weight:600;font-size:14px;letter-spacing:.24em;text-transform:uppercase;text-decoration:none;text-align:center;box-shadow:0 10px 24px rgba(40,43,22,.22);transition:transform .2s ease, box-shadow .2s ease}
+.pilula:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(40,43,22,.28)}
+.pilula:focus-visible,summary:focus-visible{outline:3px solid var(--tomate);outline-offset:3px}
+.traco{width:72px;height:1px;background:var(--amarelo);margin:28px auto;border:0}
+
+/* topo */
+.topo{background:linear-gradient(90deg,#E9C47A,#F3DCA4 45%,#D9A955);padding-block:18px}
+.topo .wrap{display:flex;align-items:center;gap:14px}
+.topo img{width:46px;height:48px}
+.marca{font-family:var(--serif);font-size:22px;line-height:1.05;color:var(--escuro)}
+.marca em{font-style:italic}
+.topo .vol{margin-left:auto;font-size:11px;letter-spacing:.3em;font-weight:600;color:var(--escuro);text-transform:uppercase;text-align:right}
+
+/* herói */
+.heroi{padding-block:72px 0;text-align:center;overflow:hidden}
+.heroi .olho{color:var(--amarelo)}
+.heroi h1{font-size:clamp(40px,9vw,72px);line-height:1.04;margin-top:22px}
+.heroi .lead{font-family:var(--serif);font-size:clamp(19px,4.4vw,23px);line-height:1.5;margin:26px auto 0;max-width:34ch;color:#ece5d2}
+.specs{margin-top:30px;font-size:12px;letter-spacing:.26em;font-weight:500;text-transform:uppercase;color:#cfc8b2;line-height:2}
+.heroi .pilula{margin-top:34px;width:100%;max-width:520px}
+.heroi .assina{font-family:var(--serif);font-style:italic;font-size:22px;color:var(--amarelo);margin-top:26px}
+.palco{position:relative;margin-top:56px;padding-block:56px 72px;background:radial-gradient(ellipse at 50% 40%,#4B5831 0%,#33371d 45%,var(--escuro) 75%)}
+.palco .capa{width:min(340px,72%);margin:0 auto;border-radius:6px;box-shadow:0 30px 60px rgba(0,0,0,.45),0 0 0 1px rgba(255,255,255,.06);transform:rotate(-4deg)}
+.palco .foto-mini{position:absolute;width:min(170px,34%);border-radius:10px;box-shadow:0 18px 36px rgba(0,0,0,.4);border:6px solid var(--creme2)}
+.palco .m1{left:max(4%, calc(50% - 330px));bottom:40px;transform:rotate(-8deg)}
+.palco .m2{right:max(4%, calc(50% - 330px));top:40px;transform:rotate(7deg)}
+
+/* faixa de promessas */
+.faixa{background:#3a2d1a;background:var(--verde);color:var(--creme);padding-block:44px;text-align:center}
+.faixa ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;align-items:center;gap:0}
+.faixa li{font-size:13px;letter-spacing:.3em;font-weight:600;text-transform:uppercase}
+.faixa li+li::before{content:"";display:block;width:56px;height:1px;background:var(--amarelo);margin:20px auto}
+
+/* história */
+.historia h2{font-size:clamp(34px,7vw,52px);line-height:1.1;text-align:center}
+.historia .texto{margin-top:34px;display:flex;flex-direction:column;gap:22px;font-size:18px;text-align:center;color:var(--texto2)}
+.autora{margin:46px auto 0;display:flex;flex-direction:column;align-items:center;gap:14px}
+.autora img{width:150px;height:150px;border-radius:50%;object-fit:cover;object-position:center 18%;border:4px solid var(--amarelo)}
+.autora .nome{font-family:var(--serif);font-size:20px}
+.autora .papel{font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:var(--linha);font-weight:600}
+
+/* pilares */
+.pilares h2{font-size:clamp(32px,6.6vw,50px);line-height:1.12;text-align:center}
+.pilares .sub{text-align:center;margin:22px auto 0;max-width:40ch;color:var(--texto2)}
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;margin-top:52px}
+.pilar{background:var(--creme2);border:1.5px dashed #c99b55;outline:1.5px dashed #c99b55;outline-offset:-10px;padding:44px 30px 40px;text-align:center;box-shadow:0 14px 30px rgba(40,43,22,.07)}
+.oval{width:120px;height:150px;margin:0 auto;border:1.5px solid var(--amarelo);border-radius:50%;display:flex;align-items:center;justify-content:center;position:relative}
+.oval::after{content:"";position:absolute;inset:7px;border:1px solid #e9cf98;border-radius:50%}
+.oval svg{width:54px;height:54px;stroke:var(--verde);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.pilar h3{font-size:26px;letter-spacing:.06em;margin-top:26px;color:var(--escuro);text-transform:uppercase}
+.pilar p{margin-top:14px;color:var(--texto2);font-size:16px}
+.cta-centro{text-align:center;margin-top:52px}
+
+/* dentro */
+.dentro h2{font-size:clamp(32px,6.6vw,50px);line-height:1.12;text-align:center}
+.mosaico{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:46px}
+.mosaico figure{margin:0;position:relative;overflow:hidden;border-radius:14px;aspect-ratio:4/5}
+.mosaico img{width:100%;height:100%;object-fit:cover}
+.mosaico figcaption{position:absolute;left:0;right:0;bottom:0;padding:28px 12px 10px;background:linear-gradient(transparent,rgba(30,34,14,.75));color:#fff;font-family:var(--serif);font-size:15px;line-height:1.2}
+.nota-foto{text-align:center;font-size:13px;color:var(--texto2);margin-top:14px}
+.lista{margin-top:56px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:34px 40px}
+.grupo h3{font-size:22px;color:var(--escuro);display:flex;align-items:baseline;gap:10px}
+.grupo h3 span{font-family:var(--sans);font-size:12px;letter-spacing:.2em;color:var(--linha);font-weight:600}
+.grupo ul{list-style:none;margin:12px 0 0;padding:0;border-top:1px solid #d9cfb6}
+.grupo li{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid #d9cfb6;font-size:15.5px;line-height:1.4}
+.nivel{flex:none;font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;padding:3px 10px;border-radius:999px;align-self:center}
+.n-f{background:#e3e7d3;color:#3b4625}.n-m{background:#f6dfc0;color:#7a4413}.n-d{background:#f5cfc6;color:#8a2a1a}
+
+/* páginas */
+.paginas{background:var(--creme2)}
+.paginas h2{font-size:clamp(32px,6.6vw,50px);line-height:1.12;text-align:center}
+.leque{display:flex;justify-content:center;align-items:flex-end;margin-top:54px;padding-bottom:10px}
+.leque img{width:min(250px,34%);border-radius:4px;box-shadow:0 18px 40px rgba(40,43,22,.22);background:#fff}
+.leque .p1{transform:rotate(-7deg) translateX(22px)}
+.leque .p2{transform:translateY(-18px);z-index:2;position:relative}
+.leque .p3{transform:rotate(7deg) translateX(-22px)}
+.rotulos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:34px}
+.rotulos div{background:#efe8d8;padding:14px 10px;text-align:center;font-size:12px;letter-spacing:.24em;text-transform:uppercase;font-weight:600;color:var(--texto2);line-height:1.6}
+.frase{font-family:var(--serif);font-style:italic;font-size:clamp(26px,5.6vw,36px);line-height:1.3;text-align:center;margin-top:56px}
+
+/* notas */
+.notas h2{font-size:clamp(32px,6.6vw,48px);text-align:center;line-height:1.12}
+.envelope{margin:46px auto 0;width:min(360px,100%);position:relative;padding-top:60px}
+.envelope .aba{position:absolute;top:0;left:50%;transform:translateX(-50%);width:0;height:0;border-left:120px solid transparent;border-right:120px solid transparent;border-bottom:90px solid #d8c79a}
+.envelope .cartao{position:relative;background:#fffdf6;margin:0 30px;padding:22px 18px 70px;text-align:center;font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--texto2);box-shadow:0 6px 16px rgba(0,0,0,.08)}
+.envelope .corpo{position:relative;margin-top:-56px;background:#e6d9b3;padding:26px 24px 30px;box-shadow:0 20px 40px rgba(40,43,22,.18)}
+.envelope .selo{background:var(--escuro);color:var(--creme);padding:22px 16px;text-align:center}
+.envelope .selo b{display:block;font-family:var(--serif);font-weight:500;font-size:30px;letter-spacing:.12em;color:var(--amarelo)}
+.envelope .selo small{display:block;font-size:10px;letter-spacing:.26em;margin-top:6px}
+.notas .texto{text-align:center;margin:36px auto 0;max-width:38ch;font-family:var(--serif);font-style:italic;font-size:21px;line-height:1.5}
+
+/* oferta */
+.oferta{background:var(--escuro);background-image:repeating-linear-gradient(135deg,rgba(255,255,255,.025) 0 2px,transparent 2px 9px)}
+.oferta h2{font-size:clamp(36px,7.4vw,56px);line-height:1.08;text-align:center}
+.oferta .sub{text-align:center;font-family:var(--serif);font-size:20px;line-height:1.55;margin:24px auto 0;max-width:34ch;color:#ece5d2}
+.caixa{background:var(--creme2);color:var(--texto);border-radius:28px;margin-top:44px;padding:16px 16px 34px;text-align:center}
+.caixa .tarja{background:var(--escuro);color:var(--creme);border-radius:16px;padding:16px;font-size:12px;letter-spacing:.3em;text-transform:uppercase;font-weight:600}
+.caixa .tarja::before,.caixa .tarja::after{content:"◆";color:var(--amarelo);margin:0 10px;font-size:10px}
+.caixa .preco{font-family:var(--serif);font-size:clamp(56px,14vw,84px);line-height:1;margin-top:30px;color:var(--escuro)}
+.caixa .preco small{font-size:.38em;vertical-align:.9em;margin-right:6px}
+.caixa .forma{margin-top:10px;font-size:15px;color:var(--texto2)}
+.caixa .pilula{margin-top:26px;width:min(100%,460px)}
+.recebe{list-style:none;margin:30px auto 0;padding:0 8px;max-width:440px;text-align:left;display:flex;flex-direction:column;gap:12px}
+.recebe li{display:flex;gap:14px;font-size:16px;line-height:1.5}
+.recebe li::before{content:"◆";color:var(--amarelo);font-size:12px;margin-top:4px}
+.tiles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:30px}
+.tile{border:1px solid rgba(242,236,221,.25);border-radius:18px;padding:22px 20px;background:rgba(255,255,255,.04)}
+.tile b{display:block;font-family:var(--serif);font-weight:500;font-size:40px;line-height:1;color:var(--amarelo)}
+.tile span{display:block;margin-top:10px;font-size:12px;letter-spacing:.22em;text-transform:uppercase;line-height:1.6;color:#e2dbc6}
+.proximos{margin-top:40px;text-align:center;font-size:15px;color:#cfc8b2}
+.proximos b{color:var(--creme);font-weight:600}
+
+/* faq */
+.faq h2{font-size:clamp(32px,6.6vw,48px);text-align:center;line-height:1.12}
+.perguntas{margin-top:40px;border-top:1px solid #d3c8ad}
+details{border-bottom:1px solid #d3c8ad}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:24px 4px;font-family:var(--serif);font-size:22px;line-height:1.3;color:var(--escuro)}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-family:var(--sans);font-weight:400;font-size:30px;color:var(--amarelo);transition:transform .2s ease;flex:none}
+details[open] summary::after{transform:rotate(45deg)}
+details p{padding:0 4px 24px;color:var(--texto2);font-size:16.5px}
+
+/* rodapé */
+.rodape{background:#1d2010;color:#d7d0bb;text-align:center;padding-block:72px 40px}
+.rodape .oval{border-color:var(--amarelo)}
+.rodape .oval::after{border-color:rgba(229,163,57,.35)}
+.rodape .oval img{width:66px;height:68px}
+.rodape .nome{font-family:var(--serif);font-style:italic;font-size:34px;color:var(--amarelo);margin-top:24px}
+.rodape p{margin-top:18px;font-family:var(--serif);font-size:17px;line-height:1.6;max-width:40ch;margin-inline:auto}
+.rodape .aviso{font-size:15px;color:#a9a38f}
+.rodape .links{margin-top:28px;font-size:12px;letter-spacing:.3em;text-transform:uppercase;font-weight:600;color:var(--amarelo)}
+.rodape .links a{text-decoration:none}
+.rodape .tec{margin-top:38px;font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--amarelo);font-weight:600}
+.rodape .tec+p{font-family:var(--sans);font-size:14px;margin-top:12px}
+
+/* barra fixa */
+.barra{position:fixed;left:0;right:0;bottom:0;z-index:20;padding:10px max(12px, env(safe-area-inset-right, 0px)) calc(12px + env(safe-area-inset-bottom, 0px)) max(12px, env(safe-area-inset-left, 0px))}
+.barra .dentro-barra{max-width:720px;margin:0 auto;background:rgba(40,43,22,.94);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid rgba(242,236,221,.18);border-radius:999px;display:flex;align-items:center;gap:12px;padding:10px 10px 10px 26px;box-shadow:0 16px 40px rgba(0,0,0,.3)}
+.barra .info{min-width:0;color:var(--creme)}
+.barra .info small{display:block;font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--amarelo);font-weight:600;line-height:1.5}
+.barra .info b{font-family:var(--serif);font-weight:500;font-size:28px;line-height:1.1}
+.barra .info b span{font-size:.55em;color:var(--amarelo);margin-right:4px}
+.barra .pilula{margin-left:auto;min-height:50px;padding:12px 26px;font-size:13px;box-shadow:none;flex:none}
+
+@media (max-width:640px){
+  body{font-size:16px}
+  .sec{padding-block:68px}
+  .cards{grid-template-columns:minmax(0,1fr)}
+  .lista{grid-template-columns:minmax(0,1fr)}
+  .mosaico{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .topo .vol{display:none}
+  .palco .foto-mini{width:30%}
+  .rotulos div{font-size:10.5px;letter-spacing:.16em}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.pilula{transition:none}}
+</style>
+
+<header class="topo">
+  <div class="wrap wide">
+    <img src="img/simbolo.svg" alt="" aria-hidden="true">
+    <div class="marca">Sem trigo,<br>sem <em>culpa.</em></div>
+    <div class="vol">Volume 1<br>Mesa de Domingo</div>
+  </div>
+</header>
+
+<main>
+<section class="escuro heroi">
+  <div class="wrap">
+    <div class="olho">Volume 1 · 19 receitas testadas</div>
+    <h1>Mesa de Domingo: a comida de vó de volta, <em>sem glúten.</em></h1>
+    <p class="lead">Pão de queijo, cuca, parmegiana e pudim. As receitas que fazem a gente se sentir em casa, feitas e refeitas na minha cozinha para quem não pode comer glúten.</p>
+    <div class="specs">Ebook em PDF · 44 páginas · foto de cada receita<br>Medidas em gramas · chega na hora no seu e-mail</div>
+    <a class="pilula" href="#oferta">Quero o meu por R$ 9,90</a>
+    <div class="assina">Sem trigo, sem culpa.</div>
+  </div>
+  <div class="palco">
+    <img class="foto-mini m2" src="img/pudim.jpg" alt="Pudim de leite condensado">
+    <img class="capa" src="img/capa.jpg" alt="Capa do ebook Mesa de Domingo sem trigo">
+    <img class="foto-mini m1" src="img/bolo-cenoura.jpg" alt="Bolo de cenoura com cobertura de brigadeiro">
+  </div>
+</section>
+
+<section class="faixa" aria-label="O que você leva">
+  <ul>
+    <li>Preço de lançamento</li>
+    <li>Acesso na hora, para sempre</li>
+    <li>Garantia de 7 dias</li>
+  </ul>
+</section>
+
+<section class="sec claro historia">
+  <div class="wrap">
+    <h2>Eu não tive medo da doença. <em>Tive medo da mesa.</em></h2>
+    <div class="texto">
+      <p>Quando recebi o diagnóstico de doença celíaca, o que me assustou foi o almoço de domingo, o bolo de aniversário, o café na casa da vó. Comida é sentimento, e eu não queria perder essas lembranças.</p>
+      <p>Foi esse medo que me fez testar receita atrás de receita até elas darem certo sem glúten. O Mesa de Domingo junta as primeiras 19: comida de mãe e de vó, sem dieta e sem receita triste “para quem não pode”.</p>
+    </div>
+    <div class="autora">
+      <img src="img/autora-sorriso.jpg" alt="Mikaela Perez Guedes">
+      <div class="nome">Mikaela Perez Guedes</div>
+      <div class="papel">Celíaca e autora</div>
+    </div>
+  </div>
+</section>
+
+<section class="sec claro2 pilares">
+  <div class="wrap wide">
+    <h2>Um ebook que põe a mesa <em>e cuida de quem senta nela.</em></h2>
+    <p class="sub">Cada página existe por causa de uma destas quatro coisas.</p>
+    <div class="cards">
+      <article class="pilar">
+        <div class="oval"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 5 9 11v11c0 10 6.5 17.5 15 21 8.5-3.5 15-11 15-21V11Z"/><path d="m17 24 5 5 9-10"/></svg></div>
+        <h3>Seguro</h3>
+        <p>Os ingredientes com risco de contaminação vêm marcados com “rótulo”, e o guia do começo ensina a deixar a cozinha segura.</p>
+      </article>
+      <article class="pilar">
+        <div class="oval"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M8 30h32"/><path d="M11 30a13 13 0 0 1 26 0"/><path d="M24 17v-6"/><path d="M20 11h8"/><path d="M10 34h28l-2 6H12Z"/></svg></div>
+        <h3>Testado</h3>
+        <p>Cada receita foi feita e refeita na minha cozinha. As medidas vêm em gramas, porque xícara varia e bolo sem glúten não perdoa.</p>
+      </article>
+      <article class="pilar">
+        <div class="oval"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 40S8 30.5 8 19.5A8.5 8.5 0 0 1 24 15a8.5 8.5 0 0 1 16 4.5C40 30.5 24 40 24 40Z"/></svg></div>
+        <h3>Afetivo</h3>
+        <p>Nada de dieta nem contagem de caloria. É cuca, sagu, nhoque do dia 29 e a cobertura de coco da minha sogra.</p>
+      </article>
+      <article class="pilar">
+        <div class="oval"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="13" y="14" width="22" height="27" rx="4"/><path d="M15 9h18v5H15Z"/><path d="M13 24h22"/></svg></div>
+        <h3>Simples</h3>
+        <p>Um mix de farinhas caseiro, o Mix da Mika, sai mais em conta que o pronto e serve para os bolos e a cuca. Cada receita diz se é fácil, média ou difícil.</p>
+      </article>
+    </div>
+    <div class="cta-centro"><a class="pilula" href="#oferta">Garantir o meu</a></div>
+  </div>
+</section>
+
+<section class="sec claro dentro" id="receitas">
+  <div class="wrap wide">
+    <h2>O que tem <em>dentro.</em></h2>
+    <div class="mosaico">
+      <figure><img src="img/bolo-fuba.jpg" alt="Bolo de fubá com cobertura de coco" loading="lazy"><figcaption>Bolo de fubá molhadinho</figcaption></figure>
+      <figure><img src="img/parmegiana.jpg" alt="Frango à parmegiana" loading="lazy"><figcaption>Frango à parmegiana</figcaption></figure>
+      <figure><img src="img/pasta-frola.jpg" alt="Pasta frola" loading="lazy"><figcaption>Pasta frola</figcaption></figure>
+      <figure><img src="img/bolo-maisena.jpg" alt="Bolo de maisena" loading="lazy"><figcaption>Bolo de maisena 5-10-15</figcaption></figure>
+      <figure><img src="img/pao-de-queijo.jpg" alt="Pão de queijo mineiro" loading="lazy"><figcaption>Pão de queijo mineiro</figcaption></figure>
+      <figure><img src="img/cuca-banana.jpg" alt="Cuca de doce de leite com farofa" loading="lazy"><figcaption>Cuca de doce de leite</figcaption></figure>
+    </div>
+    <div class="lista">
+      <div class="grupo">
+        <h3>Café e lanche da tarde <span>6</span></h3>
+        <ul>
+          <li>Pão de queijo mineiro <span class="nivel n-f">Fácil</span></li>
+          <li>Bolo de fubá molhadinho com cobertura de coco <span class="nivel n-f">Fácil</span></li>
+          <li>Bolo de cenoura com cobertura de brigadeiro <span class="nivel n-f">Fácil</span></li>
+          <li>Cuca de doce de leite com farofa <span class="nivel n-f">Fácil</span></li>
+          <li>Biscoitinhos de leite condensado com maisena <span class="nivel n-f">Fácil</span></li>
+          <li>Bolo de maisena 5-10-15 <span class="nivel n-f">Fácil</span></li>
+        </ul>
+      </div>
+      <div class="grupo">
+        <h3>Pães e salgados <span>4</span></h3>
+        <ul>
+          <li>Pão caseiro de forma <span class="nivel n-d">Difícil</span></li>
+          <li>Coxinha de mandioca com frango <span class="nivel n-m">Médio</span></li>
+          <li>Torta salgada de liquidificador <span class="nivel n-f">Fácil</span></li>
+          <li>Pizza caseira de sexta-feira <span class="nivel n-m">Médio</span></li>
+        </ul>
+      </div>
+      <div class="grupo">
+        <h3>Almoço de domingo <span>4</span></h3>
+        <ul>
+          <li>Escondidinho de mandioca com carne de panela <span class="nivel n-m">Médio</span></li>
+          <li>Nhoque de batata <span class="nivel n-m">Médio</span></li>
+          <li>Frango à parmegiana <span class="nivel n-m">Médio</span></li>
+          <li>Strogonoff de frango <span class="nivel n-f">Fácil</span></li>
+        </ul>
+      </div>
+      <div class="grupo">
+        <h3>Doces e sobremesas <span>4</span></h3>
+        <ul>
+          <li>Sagu de vinho com creme <span class="nivel n-f">Fácil</span></li>
+          <li>Pudim de leite condensado <span class="nivel n-m">Médio</span></li>
+          <li>Brigadeiro de panela <span class="nivel n-f">Fácil</span></li>
+          <li>Pasta frola <span class="nivel n-m">Médio</span></li>
+        </ul>
+      </div>
+      <div class="grupo">
+        <h3>A base de tudo <span>1</span></h3>
+        <ul>
+          <li>Mix de farinhas da Mika <span class="nivel n-f">Fácil</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec paginas">
+  <div class="wrap wide">
+    <h2>Bonito para dar vontade, <em>claro para dar certo.</em></h2>
+    <div class="leque" aria-label="Páginas do ebook">
+      <img class="p1" src="img/pag5.jpg" alt="Página Antes de começar" loading="lazy">
+      <img class="p2" src="img/pag39.jpg" alt="Página da receita de pudim" loading="lazy">
+      <img class="p3" src="img/pag7.jpg" alt="Página do Mix de farinhas da Mika" loading="lazy">
+    </div>
+    <div class="rotulos">
+      <div>Antes de começar</div>
+      <div>Passo a passo</div>
+      <div>Mix da Mika</div>
+    </div>
+    <p class="frase">Uma foto de página inteira antes de cada receita, porque a gente come com os olhos primeiro.</p>
+    <div class="cta-centro"><a class="pilula" href="#oferta">Quero o meu</a></div>
+  </div>
+</section>
+
+<section class="sec claro notas">
+  <div class="wrap">
+    <h2>Quem já cozinhou <em>com a gente.</em></h2>
+    <div class="envelope" aria-hidden="true">
+      <div class="aba"></div>
+      <div class="cartao">Uma pequena nota · da sua cozinha</div>
+      <div class="corpo"><div class="selo"><small>Notas da</small><b>COZINHA</b><small>de quem já fez as receitas</small></div></div>
+    </div>
+    <p class="texto">Este espaço é das primeiras leitoras. Fez uma receita? Me manda a foto no @semtrigosemculpa que ela vem morar aqui.</p>
+  </div>
+</section>
+
+<section class="sec escuro oferta" id="oferta">
+  <div class="wrap">
+    <h2>Mesa de Domingo <em>no preço de lançamento.</em></h2>
+    <p class="sub">O ebook está pronto. Você paga uma vez, recebe na hora e pode voltar a ele sempre que for para a cozinha.</p>
+    <div class="caixa">
+      <div class="tarja">Preço de lançamento</div>
+      <div class="preco"><small>R$</small>9,90</div>
+      <div class="forma">pagamento único, por Pix ou cartão</div>
+      <a class="pilula" id="comprar" href="#oferta">Eu quero</a>
+      <ul class="recebe">
+        <li>O ebook Mesa de Domingo em PDF, com 19 receitas e uma foto de cada</li>
+        <li>O Mix de farinhas da Mika para fazer em casa</li>
+        <li>O guia Antes de começar, com rótulos e cozinha segura</li>
+        <li>Acesso para sempre, no celular, no tablet ou impresso</li>
+      </ul>
+    </div>
+    <div class="tiles">
+      <div class="tile"><b>19</b><span>receitas testadas</span></div>
+      <div class="tile"><b>44</b><span>páginas em PDF</span></div>
+      <div class="tile"><b>1</b><span>foto para cada receita</span></div>
+      <div class="tile"><b>7</b><span>dias de garantia</span></div>
+    </div>
+    <p class="proximos">Quer ir além? <b>Cozinha de Vó</b>, com 48 receitas, e <b>Sem Trigo Sem Culpa, o livro</b>, vêm aí.</p>
+  </div>
+</section>
+
+<section class="sec claro faq">
+  <div class="wrap">
+    <h2>Perguntas <em>frequentes.</em></h2>
+    <div class="perguntas">
+      <details>
+        <summary>Como recebo o meu ebook?</summary>
+        <p>Assim que o pagamento é aprovado, chega no seu e-mail o acesso ao PDF. No Pix costuma ser na hora; no cartão, em poucos minutos.</p>
+      </details>
+      <details>
+        <summary>Funciona no celular? Posso imprimir?</summary>
+        <p>Sim para os dois. O PDF abre no celular, no tablet e no computador, e foi diagramado em tamanho A5, que fica bom impresso.</p>
+      </details>
+      <details>
+        <summary>Preciso comprar mix de farinha pronto?</summary>
+        <p>Não. O ebook ensina o Mix da Mika, feito com farinha de arroz, fécula de batata, polvilho doce e goma xantana, e várias receitas usam só polvilho, fubá, amido ou mandioca.</p>
+      </details>
+      <details>
+        <summary>Serve para quem tem doença celíaca?</summary>
+        <p>As receitas não levam trigo, centeio, cevada nem malte. Para quem é celíaco, a segurança também depende de comprar os ingredientes com “não contém glúten” e de evitar contaminação na cozinha; o ebook ensina as duas coisas. Ele não substitui a orientação do seu médico ou nutricionista.</p>
+      </details>
+      <details>
+        <summary>É um ebook fitness?</summary>
+        <p>Não. É comida de verdade: bolo, pudim, pizza, coxinha. A única coisa que sai é o glúten.</p>
+      </details>
+      <details>
+        <summary>E se eu não gostar?</summary>
+        <p>Você tem 7 dias de garantia. É só pedir o reembolso pela plataforma de pagamento e o valor volta inteiro.</p>
+      </details>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="rodape">
+  <div class="wrap">
+    <div class="oval"><img src="img/simbolo.svg" alt="" aria-hidden="true"></div>
+    <div class="nome">Sem trigo, sem culpa.</div>
+    <p>O Mesa de Domingo é o volume 1 da Sem Trigo Sem Culpa, escrito por Mikaela Perez Guedes, celíaca, para quem quer voltar a comer o que ama.</p>
+    <p class="aviso">Este ebook não substitui orientação médica ou nutricional.</p>
+    <div class="links"><a href="https://www.instagram.com/semtrigosemculpa/" target="_blank" rel="noopener">Instagram</a></div>
+    <div class="tec">Dados técnicos</div>
+    <p>Ebook em PDF · 44 páginas · formato A5 · Volume 1</p>
+  </div>
+</footer>
+
+<div class="barra" role="region" aria-label="Comprar">
+  <div class="dentro-barra">
+    <div class="info"><small>Preço de lançamento</small><b><span>R$</span>9,90</b></div>
+    <a class="pilula" href="#oferta" data-compra>Eu quero</a>
+  </div>
+</div>
+
+<script>
+  // Cole aqui o link de checkout da Hotmart quando o produto estiver criado.
+  var CHECKOUT = "";
+  if (CHECKOUT) {
+    document.querySelectorAll('#comprar,[data-compra]').forEach(function (a) { a.href = CHECKOUT; });
+  }
+</script>
