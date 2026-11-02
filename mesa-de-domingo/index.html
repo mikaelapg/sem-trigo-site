@@ -5,24 +5,26 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Mesa de Domingo sem trigo</title>
 <meta name="description" content="19 receitas de vó sem glúten, testadas na cozinha de casa por uma celíaca. Ebook em PDF, com foto de cada receita.">
+<meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@400;500;600&display=swap">
 <style>
-/* Editorial de cozinha de vó: blocos verde-escuro e creme alternados, títulos em Playfair com final em itálico, selos ovais e botões em pílula amarela. */
+/* Marca Sem trigo, sem culpa: Verde Essencial #2E3A1F, Laranja Afeto #E76F2E, Amarelo Vitalidade #F4B942, Off White Natural #F8F6EF. Playfair Display nos títulos, Montserrat nos textos. */
 :root{
   color-scheme: light;
-  --escuro:#282B16;      /* verde escuro da marca: fundo dos blocos fortes */
-  --escuro2:#33371d;
-  --verde:#4B5831;
-  --creme:#F2ECDD;       /* off-white da marca */
-  --creme2:#F8F4EA;
-  --tomate:#DA4731;
-  --laranja:#E07026;
-  --amarelo:#E5A339;
-  --ouro-claro:#F0C772;
-  --linha:#B8692E;
-  --texto:#1E220E;
-  --texto2:#4a4c3a;
+  --escuro:#2E3A1F;      /* Verde Essencial */
+  --escuro2:#3a4828;
+  --verde:#3f4f2a;
+  --creme:#F8F6EF;       /* Off White Natural */
+  --creme2:#F1EBDD;
+  --tomate:#E76F2E;
+  --laranja:#E76F2E;      /* Laranja Afeto */
+  --laranja-texto:#B8521A; /* laranja para texto pequeno sobre o off white */
+  --amarelo:#F4B942;      /* Amarelo Vitalidade */
+  --ouro-claro:#F8CC6A;
+  --linha:#E76F2E;
+  --texto:#2E3A1F;
+  --texto2:#545a45;
   --serif:'Playfair Display', Georgia, 'Times New Roman', serif;
   --sans:'Montserrat', 'Helvetica Neue', Arial, sans-serif;
 }
@@ -33,7 +35,7 @@ img{max-width:100%;display:block}
 a{color:inherit}
 h1,h2,h3{font-family:var(--serif);font-weight:500;text-wrap:balance;margin:0;letter-spacing:-.01em}
 h1 em,h2 em,h3 em{font-style:italic;color:var(--amarelo)}
-.claro h2 em,.claro h3 em{color:var(--linha)}
+.claro h2 em,.claro h3 em,.claro2 h2 em,.paginas h2 em{color:var(--laranja)}
 p{margin:0}
 .wrap{max-width:720px;margin:0 auto;padding-left:max(24px, env(safe-area-inset-left, 0px));padding-right:max(24px, env(safe-area-inset-right, 0px))}
 .wide{max-width:1040px}
@@ -43,18 +45,19 @@ p{margin:0}
 .claro2{background:var(--creme2)}
 .olho{font-family:var(--sans);font-size:13px;font-weight:600;letter-spacing:.32em;text-transform:uppercase}
 .centro{text-align:center}
-.pilula{display:inline-flex;align-items:center;justify-content:center;min-height:56px;padding:16px 36px;border-radius:999px;background:linear-gradient(180deg,var(--ouro-claro),var(--amarelo));color:var(--escuro);font-family:var(--sans);font-weight:600;font-size:14px;letter-spacing:.24em;text-transform:uppercase;text-decoration:none;text-align:center;box-shadow:0 10px 24px rgba(40,43,22,.22);transition:transform .2s ease, box-shadow .2s ease}
-.pilula:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(40,43,22,.28)}
+.pilula{display:inline-flex;align-items:center;justify-content:center;min-height:56px;padding:16px 36px;border-radius:999px;background:linear-gradient(180deg,var(--ouro-claro),var(--amarelo));color:var(--escuro);font-family:var(--sans);font-weight:600;font-size:14px;letter-spacing:.24em;text-transform:uppercase;text-decoration:none;text-align:center;box-shadow:0 10px 24px rgba(46,58,31,.22);transition:transform .2s ease, box-shadow .2s ease}
+.pilula:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(46,58,31,.28)}
 .pilula:focus-visible,summary:focus-visible{outline:3px solid var(--tomate);outline-offset:3px}
-.traco{width:72px;height:1px;background:var(--amarelo);margin:28px auto;border:0}
+.traco{width:72px;height:1.5px;background:var(--laranja);margin:28px auto;border:0}
 
 /* topo */
-.topo{background:linear-gradient(90deg,#E9C47A,#F3DCA4 45%,#D9A955);padding-block:18px}
+.topo{background:var(--creme);border-bottom:1px solid #e6dfcd;padding-block:16px}
 .topo .wrap{display:flex;align-items:center;gap:14px}
 .topo img{width:46px;height:48px}
-.marca{font-family:var(--serif);font-size:22px;line-height:1.05;color:var(--escuro)}
+.marca{font-family:var(--serif);font-size:22px;line-height:1.05;color:var(--escuro);font-weight:600}
+.marca small{display:block;font-family:var(--sans);font-weight:500;font-size:9.5px;letter-spacing:.3em;text-transform:uppercase;margin-top:6px;color:var(--texto2)}
 .marca em{font-style:italic}
-.topo .vol{margin-left:auto;font-size:11px;letter-spacing:.3em;font-weight:600;color:var(--escuro);text-transform:uppercase;text-align:right}
+.topo .vol{margin-left:auto;font-size:11px;letter-spacing:.3em;font-weight:600;color:var(--escuro);text-transform:uppercase;text-align:right;color:var(--texto2)}
 
 /* herói */
 .heroi{padding-block:72px 0;text-align:center;overflow:hidden}
@@ -64,34 +67,34 @@ p{margin:0}
 .specs{margin-top:30px;font-size:12px;letter-spacing:.26em;font-weight:500;text-transform:uppercase;color:#cfc8b2;line-height:2}
 .heroi .pilula{margin-top:34px;width:100%;max-width:520px}
 .heroi .assina{font-family:var(--serif);font-style:italic;font-size:22px;color:var(--amarelo);margin-top:26px}
-.palco{position:relative;margin-top:56px;padding-block:56px 72px;background:radial-gradient(ellipse at 50% 40%,#4B5831 0%,#33371d 45%,var(--escuro) 75%)}
+.palco{position:relative;margin-top:56px;padding-block:56px 72px;background:radial-gradient(ellipse at 50% 40%,#4a5c33 0%,#3a4828 45%,var(--escuro) 75%)}
 .palco .capa{width:min(340px,72%);margin:0 auto;border-radius:6px;box-shadow:0 30px 60px rgba(0,0,0,.45),0 0 0 1px rgba(255,255,255,.06);transform:rotate(-4deg)}
 .palco .foto-mini{position:absolute;width:min(170px,34%);border-radius:10px;box-shadow:0 18px 36px rgba(0,0,0,.4);border:6px solid var(--creme2)}
 .palco .m1{left:max(4%, calc(50% - 330px));bottom:40px;transform:rotate(-8deg)}
 .palco .m2{right:max(4%, calc(50% - 330px));top:40px;transform:rotate(7deg)}
 
 /* faixa de promessas */
-.faixa{background:#3a2d1a;background:var(--verde);color:var(--creme);padding-block:44px;text-align:center}
+.faixa{background:var(--verde);color:var(--creme);padding-block:44px;text-align:center}
 .faixa ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;align-items:center;gap:0}
 .faixa li{font-size:13px;letter-spacing:.3em;font-weight:600;text-transform:uppercase}
-.faixa li+li::before{content:"";display:block;width:56px;height:1px;background:var(--amarelo);margin:20px auto}
+.faixa li+li::before{content:"";display:block;width:56px;height:1px;background:var(--laranja);margin:20px auto}
 
 /* história */
 .historia h2{font-size:clamp(34px,7vw,52px);line-height:1.1;text-align:center}
 .historia .texto{margin-top:34px;display:flex;flex-direction:column;gap:22px;font-size:18px;text-align:center;color:var(--texto2)}
 .autora{margin:46px auto 0;display:flex;flex-direction:column;align-items:center;gap:14px}
-.autora img{width:150px;height:150px;border-radius:50%;object-fit:cover;object-position:center 18%;border:4px solid var(--amarelo)}
+.autora img{width:150px;height:150px;border-radius:50%;object-fit:cover;object-position:center 18%;border:4px solid var(--laranja)}
 .autora .nome{font-family:var(--serif);font-size:20px}
-.autora .papel{font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:var(--linha);font-weight:600}
+.autora .papel{font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:var(--laranja-texto);font-weight:600}
 
 /* pilares */
 .pilares h2{font-size:clamp(32px,6.6vw,50px);line-height:1.12;text-align:center}
 .pilares .sub{text-align:center;margin:22px auto 0;max-width:40ch;color:var(--texto2)}
 .cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;margin-top:52px}
-.pilar{background:var(--creme2);border:1.5px dashed #c99b55;outline:1.5px dashed #c99b55;outline-offset:-10px;padding:44px 30px 40px;text-align:center;box-shadow:0 14px 30px rgba(40,43,22,.07)}
-.oval{width:120px;height:150px;margin:0 auto;border:1.5px solid var(--amarelo);border-radius:50%;display:flex;align-items:center;justify-content:center;position:relative}
-.oval::after{content:"";position:absolute;inset:7px;border:1px solid #e9cf98;border-radius:50%}
-.oval svg{width:54px;height:54px;stroke:var(--verde);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.pilar{background:var(--creme);border:1.5px dashed #e3a77f;outline:1.5px dashed #e3a77f;outline-offset:-10px;padding:44px 30px 40px;text-align:center;box-shadow:0 14px 30px rgba(46,58,31,.07)}
+.oval{width:120px;height:150px;margin:0 auto;border:1.5px solid var(--laranja);border-radius:50%;display:flex;align-items:center;justify-content:center;position:relative}
+.oval::after{content:"";position:absolute;inset:7px;border:1px solid #f3c7a8;border-radius:50%}
+.oval svg{width:54px;height:54px;stroke:var(--escuro);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
 .pilar h3{font-size:26px;letter-spacing:.06em;margin-top:26px;color:var(--escuro);text-transform:uppercase}
 .pilar p{margin-top:14px;color:var(--texto2);font-size:16px}
 .cta-centro{text-align:center;margin-top:52px}
@@ -101,11 +104,11 @@ p{margin:0}
 .mosaico{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:46px}
 .mosaico figure{margin:0;position:relative;overflow:hidden;border-radius:14px;aspect-ratio:4/5}
 .mosaico img{width:100%;height:100%;object-fit:cover}
-.mosaico figcaption{position:absolute;left:0;right:0;bottom:0;padding:28px 12px 10px;background:linear-gradient(transparent,rgba(30,34,14,.75));color:#fff;font-family:var(--serif);font-size:15px;line-height:1.2}
+.mosaico figcaption{position:absolute;left:0;right:0;bottom:0;padding:28px 12px 10px;background:linear-gradient(transparent,rgba(46,58,31,.75));color:#fff;font-family:var(--serif);font-size:15px;line-height:1.2}
 .nota-foto{text-align:center;font-size:13px;color:var(--texto2);margin-top:14px}
 .lista{margin-top:56px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:34px 40px}
 .grupo h3{font-size:22px;color:var(--escuro);display:flex;align-items:baseline;gap:10px}
-.grupo h3 span{font-family:var(--sans);font-size:12px;letter-spacing:.2em;color:var(--linha);font-weight:600}
+.grupo h3 span{font-family:var(--sans);font-size:12px;letter-spacing:.2em;color:var(--laranja-texto);font-weight:600}
 .grupo ul{list-style:none;margin:12px 0 0;padding:0;border-top:1px solid #d9cfb6}
 .grupo li{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid #d9cfb6;font-size:15.5px;line-height:1.4}
 .nivel{flex:none;font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;padding:3px 10px;border-radius:999px;align-self:center}
@@ -115,7 +118,7 @@ p{margin:0}
 .paginas{background:var(--creme2)}
 .paginas h2{font-size:clamp(32px,6.6vw,50px);line-height:1.12;text-align:center}
 .leque{display:flex;justify-content:center;align-items:flex-end;margin-top:54px;padding-bottom:10px}
-.leque img{width:min(250px,34%);border-radius:4px;box-shadow:0 18px 40px rgba(40,43,22,.22);background:#fff}
+.leque img{width:min(250px,34%);border-radius:4px;box-shadow:0 18px 40px rgba(46,58,31,.22);background:#fff}
 .leque .p1{transform:rotate(-7deg) translateX(22px)}
 .leque .p2{transform:translateY(-18px);z-index:2;position:relative}
 .leque .p3{transform:rotate(7deg) translateX(-22px)}
@@ -128,7 +131,7 @@ p{margin:0}
 .envelope{margin:46px auto 0;width:min(360px,100%);position:relative;padding-top:60px}
 .envelope .aba{position:absolute;top:0;left:50%;transform:translateX(-50%);width:0;height:0;border-left:120px solid transparent;border-right:120px solid transparent;border-bottom:90px solid #d8c79a}
 .envelope .cartao{position:relative;background:#fffdf6;margin:0 30px;padding:22px 18px 70px;text-align:center;font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--texto2);box-shadow:0 6px 16px rgba(0,0,0,.08)}
-.envelope .corpo{position:relative;margin-top:-56px;background:#e6d9b3;padding:26px 24px 30px;box-shadow:0 20px 40px rgba(40,43,22,.18)}
+.envelope .corpo{position:relative;margin-top:-56px;background:#e6d9b3;padding:26px 24px 30px;box-shadow:0 20px 40px rgba(46,58,31,.18)}
 .envelope .selo{background:var(--escuro);color:var(--creme);padding:22px 16px;text-align:center}
 .envelope .selo b{display:block;font-family:var(--serif);font-weight:500;font-size:30px;letter-spacing:.12em;color:var(--amarelo)}
 .envelope .selo small{display:block;font-size:10px;letter-spacing:.26em;margin-top:6px}
@@ -140,14 +143,14 @@ p{margin:0}
 .oferta .sub{text-align:center;font-family:var(--serif);font-size:20px;line-height:1.55;margin:24px auto 0;max-width:34ch;color:#ece5d2}
 .caixa{background:var(--creme2);color:var(--texto);border-radius:28px;margin-top:44px;padding:16px 16px 34px;text-align:center}
 .caixa .tarja{background:var(--escuro);color:var(--creme);border-radius:16px;padding:16px;font-size:12px;letter-spacing:.3em;text-transform:uppercase;font-weight:600}
-.caixa .tarja::before,.caixa .tarja::after{content:"◆";color:var(--amarelo);margin:0 10px;font-size:10px}
+.caixa .tarja::before,.caixa .tarja::after{content:"◆";color:var(--laranja);margin:0 10px;font-size:10px}
 .caixa .preco{font-family:var(--serif);font-size:clamp(56px,14vw,84px);line-height:1;margin-top:30px;color:var(--escuro)}
 .caixa .preco small{font-size:.38em;vertical-align:.9em;margin-right:6px}
 .caixa .forma{margin-top:10px;font-size:15px;color:var(--texto2)}
 .caixa .pilula{margin-top:26px;width:min(100%,460px)}
 .recebe{list-style:none;margin:30px auto 0;padding:0 8px;max-width:440px;text-align:left;display:flex;flex-direction:column;gap:12px}
 .recebe li{display:flex;gap:14px;font-size:16px;line-height:1.5}
-.recebe li::before{content:"◆";color:var(--amarelo);font-size:12px;margin-top:4px}
+.recebe li::before{content:"◆";color:var(--laranja);font-size:12px;margin-top:4px}
 .tiles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:30px}
 .tile{border:1px solid rgba(242,236,221,.25);border-radius:18px;padding:22px 20px;background:rgba(255,255,255,.04)}
 .tile b{display:block;font-family:var(--serif);font-weight:500;font-size:40px;line-height:1;color:var(--amarelo)}
@@ -161,15 +164,17 @@ p{margin:0}
 details{border-bottom:1px solid #d3c8ad}
 summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:24px 4px;font-family:var(--serif);font-size:22px;line-height:1.3;color:var(--escuro)}
 summary::-webkit-details-marker{display:none}
-summary::after{content:"+";font-family:var(--sans);font-weight:400;font-size:30px;color:var(--amarelo);transition:transform .2s ease;flex:none}
+summary::after{content:"+";font-family:var(--sans);font-weight:400;font-size:30px;color:var(--laranja);transition:transform .2s ease;flex:none}
 details[open] summary::after{transform:rotate(45deg)}
 details p{padding:0 4px 24px;color:var(--texto2);font-size:16.5px}
 
 /* rodapé */
-.rodape{background:#1d2010;color:#d7d0bb;text-align:center;padding-block:72px 40px}
+.rodape{background:#252f19;color:#d7d0bb;text-align:center;padding-block:72px 40px}
 .rodape .oval{border-color:var(--amarelo)}
-.rodape .oval::after{border-color:rgba(229,163,57,.35)}
+.rodape .oval{background:var(--creme);border-color:var(--laranja)}
+.rodape .oval::after{border-color:rgba(231,111,46,.35)}
 .rodape .oval img{width:66px;height:68px}
+.rodape .lema{margin-top:8px;font-family:var(--serif);font-size:18px;color:#e9e4d6}
 .rodape .nome{font-family:var(--serif);font-style:italic;font-size:34px;color:var(--amarelo);margin-top:24px}
 .rodape p{margin-top:18px;font-family:var(--serif);font-size:17px;line-height:1.6;max-width:40ch;margin-inline:auto}
 .rodape .aviso{font-size:15px;color:#a9a38f}
@@ -180,7 +185,7 @@ details p{padding:0 4px 24px;color:var(--texto2);font-size:16.5px}
 
 /* barra fixa */
 .barra{position:fixed;left:0;right:0;bottom:0;z-index:20;padding:10px max(12px, env(safe-area-inset-right, 0px)) calc(12px + env(safe-area-inset-bottom, 0px)) max(12px, env(safe-area-inset-left, 0px))}
-.barra .dentro-barra{max-width:720px;margin:0 auto;background:rgba(40,43,22,.94);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid rgba(242,236,221,.18);border-radius:999px;display:flex;align-items:center;gap:12px;padding:10px 10px 10px 26px;box-shadow:0 16px 40px rgba(0,0,0,.3)}
+.barra .dentro-barra{max-width:720px;margin:0 auto;background:rgba(46,58,31,.94);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid rgba(242,236,221,.18);border-radius:999px;display:flex;align-items:center;gap:12px;padding:10px 10px 10px 26px;box-shadow:0 16px 40px rgba(0,0,0,.3)}
 .barra .info{min-width:0;color:var(--creme)}
 .barra .info small{display:block;font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--amarelo);font-weight:600;line-height:1.5}
 .barra .info b{font-family:var(--serif);font-weight:500;font-size:28px;line-height:1.1}
@@ -199,13 +204,11 @@ details p{padding:0 4px 24px;color:var(--texto2);font-size:16.5px}
 }
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.pilula{transition:none}}
 </style>
-</head>
-<body>
 
 <header class="topo">
   <div class="wrap wide">
     <img src="img/simbolo.svg" alt="" aria-hidden="true">
-    <div class="marca">Sem trigo,<br>sem <em>culpa.</em></div>
+    <div class="marca">Sem trigo, sem <em>culpa.</em><small>Receitas sem glúten</small></div>
     <div class="vol">Volume 1<br>Mesa de Domingo</div>
   </div>
 </header>
@@ -218,7 +221,7 @@ details p{padding:0 4px 24px;color:var(--texto2);font-size:16.5px}
     <p class="lead">Pão de queijo, cuca, parmegiana e pudim. As receitas que fazem a gente se sentir em casa, feitas e refeitas na minha cozinha para quem não pode comer glúten.</p>
     <div class="specs">Ebook em PDF · 44 páginas · foto de cada receita<br>Medidas em gramas · chega na hora no seu e-mail</div>
     <a class="pilula" href="#oferta">Quero o meu por R$ 19,90</a>
-    <div class="assina">Sem trigo, sem culpa.</div>
+    <div class="assina">Comida de verdade, sem glúten.</div>
   </div>
   <div class="palco">
     <img class="foto-mini m2" src="img/pudim.jpg" alt="Pudim de leite condensado">
@@ -433,6 +436,7 @@ details p{padding:0 4px 24px;color:var(--texto2);font-size:16.5px}
   <div class="wrap">
     <div class="oval"><img src="img/simbolo.svg" alt="" aria-hidden="true"></div>
     <div class="nome">Sem trigo, sem culpa.</div>
+    <p class="lema">Sabor, equilíbrio e <em>liberdade</em> em cada receita.</p>
     <p>O Mesa de Domingo é o volume 1 da Sem Trigo Sem Culpa, escrito por Mikaela Perez Guedes, celíaca, para quem quer voltar a comer o que ama.</p>
     <p class="aviso">Este ebook não substitui orientação médica ou nutricional.</p>
     <div class="links"><a href="https://www.instagram.com/semtrigosemculpa/" target="_blank" rel="noopener">Instagram</a></div>
@@ -455,5 +459,5 @@ details p{padding:0 4px 24px;color:var(--texto2);font-size:16.5px}
     document.querySelectorAll('#comprar,[data-compra]').forEach(function (a) { a.href = CHECKOUT; });
   }
 </script>
-</body>
+
 </html>
