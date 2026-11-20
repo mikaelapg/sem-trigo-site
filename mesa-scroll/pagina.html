@@ -1,0 +1,243 @@
+<title>Mesa de Domingo</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Role a página e a mesa de domingo se monta, sem glúten.">
+<link rel="icon" type="image/png" href="img/favicon-32.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Montserrat:wght@400;500;600;700;800&display=swap">
+<style>
+/* Protótipo: a mesa de domingo se monta com o scroll. Visual único da marca (claro), sem tema escuro. */
+:root{
+  --verde:#2E3A1F; --laranja:#E76F2E; --laranja-txt:#B4501A; --amarelo:#F4B942; --off:#F8F6EF; --bege:#F1EADB; --texto2:#55593f;
+  --serif:'Playfair Display', Georgia, 'Times New Roman', serif;
+  --sans:'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+body{background:var(--off);color:var(--verde);font-family:var(--sans);font-size:16.5px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+h1,h2,h3{font-family:var(--serif);font-weight:500;margin:0;letter-spacing:-.015em;text-wrap:balance}
+em{font-style:italic}
+p{margin:0}
+.wrap{max-width:1080px;margin:0 auto;padding-left:max(20px, env(safe-area-inset-left, 0px));padding-right:max(20px, env(safe-area-inset-right, 0px))}
+.botao{display:inline-flex;align-items:center;gap:10px;min-height:56px;padding:14px 30px;border-radius:999px;background:var(--verde);color:var(--off);text-decoration:none;font-weight:700;font-size:15px;letter-spacing:.03em;transition:transform .2s ease}
+.botao:hover{transform:translateY(-2px)}
+.botao:focus-visible,summary:focus-visible{outline:3px solid var(--laranja);outline-offset:3px}
+
+/* topo fixo */
+.topo{position:fixed;left:0;right:0;top:0;z-index:30;padding-top:env(safe-area-inset-top, 0px);background:color-mix(in srgb, var(--off) 88%, transparent);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.topo .wrap{display:flex;align-items:center;justify-content:space-between;padding-block:12px}
+.topo img{height:44px;width:auto}
+.topo a.mini{font-size:13px;font-weight:700;color:var(--verde);text-decoration:none;border-bottom:2px solid var(--laranja);padding-bottom:2px}
+
+/* palco do scroll */
+.cena{position:relative;height:430vh}
+.palco{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;background:var(--off)}
+.titulo{position:absolute;left:0;right:0;top:calc(env(safe-area-inset-top, 0px) + 92px);text-align:center;z-index:5;padding-inline:20px}
+.titulo .olho{font-size:12px;font-weight:700;letter-spacing:.32em;color:var(--laranja-txt)}
+.titulo h1{font-size:clamp(34px,6.4vw,72px);line-height:1.02;margin-top:10px}
+.titulo h1 em{color:var(--laranja)}
+.titulo .dica{margin-top:14px;font-size:13px;font-weight:600;letter-spacing:.12em;color:var(--texto2)}
+.mesa{position:absolute;left:50%;top:58%;width:150vmax;height:150vmax;margin:-75vmax 0 0 -75vmax;
+  background-color:var(--off);
+  background-image:linear-gradient(90deg, rgba(231,111,46,.78) 50%, transparent 50%),linear-gradient(rgba(231,111,46,.78) 50%, transparent 50%);
+  background-size:9vmax 9vmax;background-blend-mode:multiply;
+  transform-origin:50% 50%;border-radius:2vmax;box-shadow:0 0 0 1.4vmax #C9561C inset}
+.mesa::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 50%, transparent 30%, rgba(46,58,31,.18) 70%)}
+.pratos{position:absolute;left:50%;top:58%;width:0;height:0;z-index:3}
+.prato{position:absolute;width:24vmin;height:24vmin;margin:-12vmin 0 0 -12vmin;border-radius:50%;background:#fff;box-shadow:0 2.4vmin 4vmin rgba(46,58,31,.35);padding:1.6vmin;will-change:transform}
+.prato img{width:100%;height:100%;border-radius:50%;object-fit:cover}
+.prato span{position:absolute;left:50%;bottom:-3.6vmin;transform:translateX(-50%);white-space:nowrap;background:var(--verde);color:var(--off);font-size:clamp(10px,1.7vmin,14px);font-weight:700;padding:.5vmin 1.6vmin;border-radius:999px;letter-spacing:.02em}
+.livro{position:absolute;width:27vmin;max-width:none;margin:-19vmin 0 0 -13.5vmin;border-radius:.8vmin;box-shadow:0 3vmin 6vmin rgba(46,58,31,.45);z-index:4;will-change:transform}
+.carimbo{position:absolute;left:50%;top:58%;z-index:6;transform:translate(-50%,-50%);background:var(--amarelo);border:1vmin solid var(--verde);border-radius:2vmin;padding:1.4vmin 3vmin;font-weight:800;font-size:clamp(22px,5vmin,52px);letter-spacing:.05em;color:var(--verde);white-space:nowrap;opacity:0}
+.final{position:absolute;left:50%;width:min(420px, calc(100% - 32px));margin-left:calc(min(420px, calc(100% - 32px)) / -2);background:var(--off);border-radius:22px;padding:18px 16px 20px;box-shadow:0 18px 40px rgba(46,58,31,.35);bottom:calc(env(safe-area-inset-bottom, 0px) + 34px);z-index:7;text-align:center;opacity:0}
+.final .preco{font-family:var(--serif);font-size:clamp(26px,4vmin,40px);margin-bottom:12px;display:inline-block}
+.final .preco small{font-family:var(--sans);font-size:13px;color:var(--texto2);font-weight:600;margin-left:6px}
+.barra-scroll{position:absolute;left:0;top:0;height:6px;background:var(--amarelo);z-index:8;width:0}
+
+/* depois da mesa */
+.secao{padding-block:88px}
+.secao .olho{font-size:12px;font-weight:700;letter-spacing:.32em;color:var(--laranja-txt)}
+.historia{background:var(--verde);color:var(--off)}
+.historia .wrap{display:grid;grid-template-columns:220px minmax(0,1fr);gap:48px;align-items:center}
+.historia img{width:220px;height:220px;border-radius:50%;object-fit:cover;object-position:center 18%;border:5px solid var(--amarelo)}
+.historia h2{font-size:clamp(30px,4.6vw,50px);line-height:1.08}
+.historia h2 em{color:var(--amarelo)}
+.historia p{margin-top:20px;font-size:17px;color:#e6e4d8;max-width:58ch}
+.lista{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;margin-top:44px}
+.lista div{border-top:2px solid var(--verde);padding-top:16px}
+.lista b{font-family:var(--serif);font-weight:500;font-size:44px;line-height:1;color:var(--laranja)}
+.lista p{margin-top:8px;font-size:15.5px;color:var(--texto2)}
+.oferta{background:var(--bege)}
+.cartao{max-width:520px;margin:40px auto 0;background:var(--off);border-radius:22px;padding:36px 32px;box-shadow:0 24px 60px rgba(46,58,31,.14);text-align:center}
+.cartao .v{font-family:var(--serif);font-size:64px;line-height:1}
+.cartao .v small{font-size:.4em;vertical-align:.9em;color:var(--laranja-txt);margin-right:4px}
+.cartao ul{list-style:none;padding:0;margin:22px 0 26px;text-align:left;display:flex;flex-direction:column;gap:8px;font-size:15.5px}
+.cartao li::before{content:"●";color:var(--laranja);margin-right:10px;font-size:11px;vertical-align:2px}
+.cartao .g{margin-top:18px;font-size:13.5px;color:var(--texto2)}
+details{border-bottom:1px solid #dcd3bf;max-width:760px;margin:0 auto}
+summary{cursor:pointer;list-style:none;padding:20px 2px;font-family:var(--serif);font-size:21px;display:flex;justify-content:space-between;gap:16px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--laranja);font-family:var(--sans);font-size:26px;line-height:1}
+details[open] summary::after{content:"–"}
+details p{padding:0 2px 20px;color:var(--texto2)}
+footer{background:var(--verde);color:#d9d8ca;padding-block:40px calc(40px + env(safe-area-inset-bottom, 0px));font-size:13.5px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+@media (max-width:760px){
+  .historia .wrap{grid-template-columns:minmax(0,1fr);gap:26px}
+  .historia img{width:160px;height:160px}
+  .lista{grid-template-columns:minmax(0,1fr)}
+  .prato{width:26vmin;height:26vmin;margin:-13vmin 0 0 -13vmin}
+}
+@media (prefers-reduced-motion:reduce){.botao{transition:none}}
+</style>
+
+<header class="topo"><div class="wrap"><img src="img/logo-horizontal.svg" alt="Sem trigo, sem culpa. Receitas sem glúten" width="113" height="44"><a class="mini" href="#comprar">R$ 19,90</a></div></header>
+
+<main>
+<section class="cena" id="cena" aria-label="A mesa de domingo se montando">
+  <div class="palco">
+    <div class="barra-scroll" id="barra"></div>
+    <div class="mesa" id="mesa" aria-hidden="true"></div>
+    <div class="titulo" id="titulo">
+      <div class="olho">MESA DE DOMINGO · VOLUME 1</div>
+      <h1 id="frase">A comida de vó de volta, <em>sem glúten.</em></h1>
+      <div class="dica" id="dica">role para pôr a mesa ↓</div>
+    </div>
+    <div class="pratos" id="pratos"></div>
+    <div class="carimbo" id="carimbo">SEM GLÚTEN ✓</div>
+    <div class="final" id="final">
+      <div class="preco">R$ 19,90<small>19 receitas · PDF</small></div><br>
+      <a class="botao" href="#comprar">Quero a minha mesa de volta</a>
+    </div>
+  </div>
+</section>
+
+<section class="secao historia">
+  <div class="wrap">
+    <img src="img/autora-sorriso.jpg" alt="Mikaela Perez Guedes, autora do ebook" width="220" height="220">
+    <div>
+      <div class="olho" style="color:var(--amarelo)">QUEM ESCREVEU</div>
+      <h2 style="margin-top:12px">Eu não tive medo da doença. <em>Tive medo da mesa.</em></h2>
+      <p>Quando recebi o diagnóstico de doença celíaca, o que me assustou foi o almoço de domingo, o bolo de aniversário, o café na casa da vó. Testei receita atrás de receita até elas darem certo sem glúten. O Mesa de Domingo junta as primeiras 19.</p>
+    </div>
+  </div>
+</section>
+
+<section class="secao">
+  <div class="wrap">
+    <div class="olho">O QUE VEM NO EBOOK</div>
+    <h2 style="font-size:clamp(30px,4.6vw,50px);line-height:1.08;margin-top:12px">Comida de verdade, <em style="color:var(--laranja)">testada em casa.</em></h2>
+    <div class="lista">
+      <div><b>19</b><p>receitas, do café da manhã à sobremesa, cada uma com foto</p></div>
+      <div><b>1</b><p>mix de farinhas da Mika, feito em casa, sem comprar mix pronto</p></div>
+      <div><b>0</b><p>psyllium ou goma xantana: só ingrediente de supermercado comum</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="secao oferta" id="comprar">
+  <div class="wrap">
+    <div class="olho" style="text-align:center">PRONTO PARA BAIXAR</div>
+    <h2 style="font-size:clamp(30px,4.6vw,50px);line-height:1.08;margin-top:12px;text-align:center">A mesa de domingo <em style="color:var(--laranja)">na sua cozinha.</em></h2>
+    <div class="cartao">
+      <div class="v"><small>R$</small>19,90</div>
+      <div style="font-size:13px;color:var(--texto2);margin-top:8px">pagamento único · Pix ou cartão</div>
+      <ul>
+        <li>19 receitas sem glúten com foto</li>
+        <li>Mix de farinhas da Mika</li>
+        <li>Guia Antes de começar: rótulos e cozinha segura</li>
+        <li>PDF para celular, tablet ou impressão</li>
+      </ul>
+      <a class="botao" id="btn-comprar" href="#comprar" data-compra>Eu quero o meu</a>
+      <p class="g">Garantia de 7 dias: se não gostar, pede o reembolso pela plataforma e o valor volta inteiro.</p>
+    </div>
+  </div>
+</section>
+
+<section class="secao">
+  <div class="wrap">
+    <details><summary>Como recebo o ebook?</summary><p>Assim que o pagamento é aprovado, o acesso ao PDF chega no seu e-mail. No Pix costuma ser na hora.</p></details>
+    <details><summary>Serve para quem é celíaco?</summary><p>As receitas não levam trigo, centeio, cevada nem malte, e o ebook ensina a ler rótulos e evitar contaminação na cozinha. Ele não substitui a orientação do seu médico ou nutricionista.</p></details>
+    <details><summary>É um ebook fitness?</summary><p>Não. É comida de verdade: pão de queijo, bolo, pudim, parmegiana. A única coisa que sai é o glúten.</p></details>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap"><span>Sem trigo, sem culpa. · Mesa de Domingo, Volume 1</span><span>@semtrigosemculpa</span></div></footer>
+
+<script>
+// Cole aqui o link de checkout da Hotmart quando o produto estiver criado.
+var CHECKOUT = "";
+if (CHECKOUT) document.querySelectorAll('[data-compra]').forEach(function(a){ a.href = CHECKOUT; });
+
+(function(){
+  var PRATOS = [
+    {img:'img/pao-de-queijo-p.jpg', nome:'Pão de queijo', ang:-140},
+    {img:'img/bolo-cenoura-p.jpg', nome:'Bolo de cenoura', ang:-90},
+    {img:'img/pudim-p.jpg', nome:'Pudim', ang:-40},
+    {img:'img/parmegiana-p.jpg', nome:'Parmegiana', ang:10},
+    {img:'img/cuca-banana-p.jpg', nome:'Cuca', ang:60},
+    {img:'img/pasta-frola-p.jpg', nome:'Pasta frola', ang:120},
+    {img:'img/coxinha-redondo-p.jpg', nome:'Coxinha', ang:170}
+  ];
+  var box = document.getElementById('pratos');
+  var els = PRATOS.map(function(p){
+    var d = document.createElement('div'); d.className = 'prato';
+    d.innerHTML = '<img src="'+p.img+'" alt="'+p.nome+' sem glúten" loading="eager"><span>'+p.nome+'</span>';
+    box.appendChild(d); return d;
+  });
+  var livro = document.createElement('img'); livro.className = 'livro'; livro.src = 'img/capa.jpg'; livro.alt = 'Capa do ebook Mesa de Domingo';
+  box.appendChild(livro);
+
+  var cena = document.getElementById('cena'), mesa = document.getElementById('mesa');
+  var titulo = document.getElementById('titulo'), dica = document.getElementById('dica');
+  var carimbo = document.getElementById('carimbo'), fim = document.getElementById('final'), barra = document.getElementById('barra');
+  var cl = function(x,a,b){ return Math.min(b, Math.max(a, x)); };
+  var p = function(t,a,b){ return cl((t-a)/(b-a), 0, 1); };
+  var out = function(x){ return 1-Math.pow(1-x,3); };
+  var back = function(x){ var c=1.7; return 1+(c+1)*Math.pow(x-1,3)+c*Math.pow(x-1,2); };
+  var reduz = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function desenha(){
+    var r = cena.getBoundingClientRect();
+    var total = cena.offsetHeight - window.innerHeight;
+    var t = reduz ? 1 : cl(-r.top / total, 0, 1);
+    var vmin = Math.min(window.innerWidth, window.innerHeight) / 100;
+    var raio = (window.innerWidth < 760 ? 34 : 30) * vmin;
+    barra.style.width = (t*100) + '%';
+    // a toalha vem de longe e deita
+    var km = out(p(t, 0, .2));
+    mesa.style.transform = 'perspective(120vmax) rotateX(' + (58 - 8*km) + 'deg) scale(' + (.6 + .4*km) + ') rotate(' + (-12 + 12*km) + 'deg)';
+    // título sobe e some quando a mesa enche
+    var kt = p(t, .1, .2);
+    titulo.style.opacity = 1 - kt; titulo.style.transform = 'translateY(' + (-40*kt) + 'px)';
+    dica.style.opacity = 1 - p(t, .02, .08);
+    // pratos voam de fora da tela e pousam em volta
+    els.forEach(function(el, i){
+      var a = .16 + i*.05, k = p(t, a, a + .12);
+      var ang = PRATOS[i].ang * Math.PI/180;
+      var abre = 1 + .24*out(p(t, .55, .7));
+      var x = Math.cos(ang)*raio*abre*(window.innerWidth < 760 ? .92 : 1.2), y = Math.sin(ang)*raio*abre*.8;
+      var dx = Math.cos(ang)*120*vmin, dy = Math.sin(ang)*120*vmin - 60*vmin;
+      var e = out(k);
+      el.style.opacity = k > 0 ? 1 : 0;
+      el.style.transform = 'translate(' + (x + dx*(1-e)) + 'px,' + (y + dy*(1-e)) + 'px) rotate(' + ((1-e)*(i%2 ? 220 : -220)) + 'deg) scale(' + (.5 + .5*back(k)) + ')';
+    });
+    // o livro cai no meio da mesa
+    var kl = p(t, .55, .7);
+    livro.style.opacity = kl > 0 ? 1 : 0;
+    livro.style.transform = 'translateY(' + (-70*vmin*(1-out(kl))) + 'px) rotate(' + (-8 + 4*out(kl)) + 'deg) scale(' + (1.6 - .6*out(kl)) + ')';
+    // carimbo e chamada
+    var kc = p(t, .74, .8);
+    carimbo.style.opacity = kc > 0 ? 1 - p(t, .9, .97) : 0;
+    carimbo.style.transform = 'translate(-50%,-50%) translateY(' + (-30*vmin) + 'px) scale(' + (2.2 - 1.2*out(kc)) + ') rotate(' + (-8 + 4*kc) + 'deg)';
+    var kf = p(t, .8, .88);
+    fim.style.opacity = kf; fim.style.transform = 'translateY(' + (30*(1-out(kf))) + 'px)';
+  }
+  var pendente = false;
+  function pede(){ if (!pendente){ pendente = true; requestAnimationFrame(function(){ pendente = false; desenha(); }); } }
+  window.addEventListener('scroll', pede, {passive:true});
+  window.addEventListener('resize', pede);
+  desenha();
+})();
+</script>
